@@ -2,7 +2,46 @@
 <!-- Support for Academicons -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-light.png" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-dark.png" media="(prefers-color-scheme: dark)">
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-light.png">
-<!-- end custom head snippets --
+<!-- Favicon (switched via JS for light/dark mode) -->
+<link id="site-favicon"
+      rel="icon"
+      type="image/png"
+      href="{{ base_path }}/images/favicon-light.png?v={{ site.time | date: '%s' }}">
+
+<script>
+(function() {
+  // These URLs are rendered by Jekyll at build time
+  var lightIcon = "{{ base_path }}/images/favicon-light.png?v={{ site.time | date: '%s' }}";
+  var darkIcon  = "{{ base_path }}/images/favicon-dark.png?v={{ site.time | date: '%s' }}";
+
+  var link = document.getElementById('site-favicon');
+  if (!link) return;
+
+  function setFavicon(isDark) {
+    link.href = isDark ? darkIcon : lightIcon;
+  }
+
+  // Detect current color scheme
+  var mql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+  if (mql) {
+    setFavicon(mql.matches);
+
+    // Listen for changes (when you flip OS / browser theme)
+    if (mql.addEventListener) {
+      mql.addEventListener('change', function(e) {
+        setFavicon(e.matches);
+      });
+    } else if (mql.addListener) {
+      // Older browsers
+      mql.addListener(function(e) {
+        setFavicon(e.matches);
+      });
+    }
+  } else {
+    // Fallback: default to light icon
+    setFavicon(false);
+  }
+})();
+</script>
+
+<!-- end custom head snippets -->

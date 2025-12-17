@@ -63,5 +63,8 @@
   &--lg {
     padding-right: 2em;
     font-weight: 700;
+    a {
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, "Roboto Mono", "Segoe UI Mono", "Ubuntu Mono", "Courier New", monospace;
+    }
   }
 }

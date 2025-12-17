@@ -498,3 +498,124 @@ a.reversefootnote {
   color: $danger-color;
   font-weight: bold;
 }
+
+/*
+   Details / Summary
+   Larger, automatically bold summary text and a small grey box around it.
+*/
+details {
+  margin: 1rem 0;
+  border-radius: $border-radius;
+  overflow: hidden;
+  border: 1px solid var(--global-border-color);
+  background: var(--global-bg-color);
+}
+
+details summary {
+  display: block;
+  cursor: pointer;
+  background: var(--details-summary-bg, #f3f4f6);
+  color: var(--global-text-color);
+  padding: 0.6rem 0.9rem;
+  font-weight: 700;
+  font-size: 1.0625rem; // ~17px when base is 16px
+  list-style: none;
+  margin: 0;
+}
+
+details[open] summary {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* content area inside details (single wrapper appearance) with smooth animation */
+details > :not(summary) {
+  background: var(--global-bg-color);
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding: 0 0.9rem; /* collapse vertical padding when closed */
+  transition: max-height 500ms ease, opacity 300ms ease, padding 300ms ease;
+}
+
+/* expanded state */
+details[open] > :not(summary) {
+  max-height: 2000px; /* large enough for typical content */
+  opacity: 1;
+  padding: 0.75rem 0.9rem 0.9rem 0.9rem;
+}
+
+/* ensure internal paragraphs look natural and don't generate extra borders */
+details p { margin: 0; padding: 1rem}
+
+/* More specific rules to override page-level paragraph spacing */
+.page__content details p,
+.page details p {
+  margin: 0;
+  padding: 1rem
+}
+
+/* Hide stray empty paragraphs often created when mixing HTML and Markdown */
+details > p:empty {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* lists inside details */
+.page__content details ul,
+.page__content details ol,
+.page details ul,
+.page details ol {
+  margin: 0 0 0 0;
+  padding: 0 1rem 1rem 2.5rem;
+  color: var(--global-text-color);
+}
+
+details li { margin-bottom: 0.5rem; }
+  
+/* custom rotating disclosure triangle (replaces native marker) */
+summary {
+  position: relative;
+  padding-left: 2rem;
+  cursor: pointer;
+}
+
+/* hide native markers so we can draw our own */
+summary::-webkit-details-marker { display: none; }
+summary::marker { color: transparent; font-size: 0; }
+
+/* triangle drawn with borders, vertically centered */
+summary::before {
+  content: "";
+  position: absolute;
+  left: 1rem; /* nudged right to avoid the border */
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transform-origin: 50% 50%;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--global-text-color);
+  transition: transform 240ms ease, border-color 240ms ease;
+  width: 0;
+  height: 0;
+}
+
+/* rotate when open */
+details[open] > summary::before,
+details[open] summary::before {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  summary::before { transition: none; }
+}
+
+.page__content details > .content,
+.page details > .content { padding: 0; }
+
+/* make the left-padding for the summary robust to page-level overrides */
+.page__content details summary,
+.page details summary {
+  padding-left: 2.5rem;
+}

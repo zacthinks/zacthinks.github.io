@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Research on research"
+title                    : "TextMachina"
 title_separator          : "-"
 name                     : &name "Zac Lim"
 description              : &description "Zac Lim's academic site"   # Update this with a general description of your site, this is the default if not overridden by a page
@@ -26,7 +26,7 @@ author:
   avatar           : "zac_sq.jpg"
   name             : "Zac Lim"
   pronouns         : "he/him"  
-  bio              : "Expanding our understanding of research through empirical analyses and conceptual engineering"
+  bio              : "Building tools and frameworks to support principled and rigorous large-scale text analysis"
   location         : "Cambridge, MA"
   employer         : "Harvard University"
   uri              : # URL
