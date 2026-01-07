@@ -1,152 +1,351 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
-    "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "name": "Zachary Lim",
+    "email": "zlim@g.harvard.edu",
+    "phone": "(425) 246-5904",
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
-    },
-    "profiles": [
-      {
-        "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-      },
-      {
-        "network": "ORCID",
-        "username": "",
-        "url": "https://orcid.org/yourorcidurl"
-      },
-      {
-        "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
-      }
-    ]
+      "city": "Cambridge",
+      "region": "MA"
+    }
   },
-  "work": [],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
-      "gpa": null,
-      "courses": []
+      "institution": "Harvard University",
+      "location": "Cambridge, MA",
+      "studyType": "PhD",
+      "area": "Education",
+      "startDate": "2019-09",
+      "endDate": "2026-05",
+      "summary": "Focus on social science methodology, computer-assisted text analysis, and the history of methodology.",
+      "committee": [
+        "Sebastian Mu\u00f1oz-Najar Galvez",
+        "Luke W. Miratrix",
+        "Catherine Snow"
+      ],
+      "courses": [
+        "Conceptual Engineering",
+        "Epistemic Injustice",
+        "Ethnographic Fieldwork",
+        "The Past and Futures of the University",
+        "Dewey\u2019s Philosophy of Education",
+        "Research Methods and Practices in the History of Science",
+        "Historiography of the History of Science",
+        "Anscombe\u2019s Intention",
+        "Carnap and Quine",
+        "Intermediate and Advanced Statistical Methods for Applied Educational Research",
+        "Rawls and Liberal Political Theory",
+        "The Value of Truth and Knowledge in Democracies",
+        "Agnotology: The History of Knowledge and Ignorance",
+        "Art and Understanding",
+        "Philosophy of Education"
+      ]
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
-      "courses": []
+      "institution": "Princeton University",
+      "location": "Princeton, NJ",
+      "studyType": "Ivy Plus Exchange Scholar",
+      "area": "Text as data",
+      "startDate": "2023-09",
+      "endDate": "2023-12",
+      "advisor": "Brandon Stewart"
     },
     {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
-      "gpa": null,
-      "courses": []
+      "institution": "University of Washington",
+      "location": "Seattle, WA",
+      "studyType": "BA, summa cum laude",
+      "area": "Linguistics (Honors) and Japanese (Honors); Interdisciplinary Honors",
+      "endDate": "2015-06",
+      "theses": [
+        {
+          "title": "An \u201cIntentional\u201d Challenge of the Concept of Competence",
+          "field": "Linguistics",
+          "summary": "Critiqued assumptions of generative linguistics and proposed a pragmatics-based formal model of natural language."
+        },
+        {
+          "title": "Applying the Natural Semantic Metalanguage Framework to Foreign Language Instruction",
+          "field": "Japanese",
+          "summary": "Modified a decompositional semantics framework and conducted a pilot study on foreign language instruction."
+        }
+      ]
+    },
+    {
+      "institution": "Osaka University",
+      "location": "Osaka, Japan",
+      "studyType": "Exchange Program",
+      "startDate": "2014-03",
+      "endDate": "2014-08"
     }
   ],
-  "skills": [],
-  "languages": [],
-  "interests": [],
-  "references": [],
+  "research_interests": [
+    "Sociology of science",
+    "Philosophy of science",
+    "Philosophy of language",
+    "Conceptual ethics and engineering",
+    "History of science",
+    "Political epistemology",
+    "Social science methodology",
+    "Computational linguistics",
+    "Computer-assisted text analysis"
+  ],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "https://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "title": "LIPE: Latent Interview Protocols Engineer",
+      "venue": "AERA",
+      "year": 2026,
+      "type": "conference paper"
     }
   ],
-  "presentations": [
+  "working_papers": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
+      "title": "LIPE: Latent Interview Protocols Engineer",
+      "summary": "Introduces a method and software tool for recovering latent interview protocols from interview corpora by clustering interviewer utterances into protocol questions using semantic embeddings, and modeling typical question sequences as directed graphs. The approach enables researchers to reverse-engineer semi-structured interview designs and retrieve responses by inferred question type.",
+      "artifacts": [
+        "[Python package](https://github.com/zacthinks/lipe)",
+        "Conference paper (AERA 2026, accepted)"
+      ],
+      "status": "working paper / accepted conference version"
     },
     {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
+      "title": "A Genealogy of Philosophical Framing in Methodological Disputes",
+      "summary": "Presents a genealogical analysis of how philosophical framing entered and evolved within qualitative–quantitative methodological debates. The paper traces how different actors mobilized philosophical concepts in distinct ways across historical moments, and analyzes these uses through the lens of social-epistemic theories, including echo chambers and willful ignorance, to understand how methodological disagreements persist and stabilize.",
+      "status": "working paper"
     },
     {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
+      "title": "HIPR: Hierarchical Propositions for Computer-Assisted Text Analysis",
+      "summary": "Introduces a method and software tool for recovering propositions from text using a semantically rich formal model. The paper proposes hierarchical propositions as a representation that captures a broader range of semantic content than prior approaches while enabling entailment relations between propositions. This structure allows propositions and proposition counts to function as analytic features, extending beyond word-based representations and enabling more sophisticated search and exploration of large text corpora.",
+        "artifacts": [
+          "[Python package](https://github.com/zacthinks/hipr)"],
+      "status": "working paper"
     },
     {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
+      "title": "Computer-Assisted Text Analysis: History and a General Framework",
+      "summary": "Examines the historical development of computer-assisted text analysis methods across multiple fields and proposes a general framework for conducting such analyses. The framework is informed by established approaches to qualitative text analysis and aims to clarify the role of the researcher at each stage of analysis, specifying how computational tools can assist interpretive work. The paper argues that this approach can help establish computer-assisted text analysis as a robust methodological tradition in the social sciences, rather than as a hybrid or compromise between qualitative and quantitative methods.",
+      "status": "working paper"
+    },
+{
+  "title": "The Epistemic Goals of Research",
+  "summary": "Argues that persistent methodological disputes are partly driven by the absence of a shared account of the epistemic goals of research. The paper critiques traditional conceptions of truth as a research goal while also rejecting arbitrariness because that would undermine the possibility of epistemic authority. It seeks to articulate an intermediate account of epistemic goals that can serve as a common reference point for evaluating and adjudicating methodological disagreements across research traditions.",
+  "status": "work in progress"
+}
+  ],
+  "collaborations": [
+    {
+      "name": "Higher Education in the 21st Century",
+      "organization": "Project Zero, Harvard",
+      "role": "Research Assistant",
+      "startDate": "2024-10",
+      "endDate": "2025-09",
+      "summary": "Applied computer-assisted text analysis to previously qualitative data.",
+      "highlights": [
+        "Built text classifiers using pretrained embeddings and neural networks.",
+        "Used LLM few-shot classification methods.",
+        "Advised on augmenting qualitative analyses with computational techniques."
+      ]
     }
   ],
   "teaching": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
+      "course": "Evidence",
+      "institution": "Harvard Graduate School of Education",
+      "role": "Instructor",
+      "terms": [
+        "Summer 2022",
+        "Summer 2023",
+        "Summer 2024",
+        "Summer 2025"
+      ],
+      "highlights": [
+        "Designed classes introducing types of evidence in education research.",
+        "Led class of ~70 students and supervised teaching fellows."
+      ]
     },
     {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "course": "Ignorance, Lies, Hogwash, and Humbug",
+      "institution": "Harvard College",
+      "role": "Teaching Fellow",
+      "terms": [
+        "Spring 2023",
+        "Spring 2024"
+      ]
+    },
+    {
+      "course": "Intermediate and Advanced Statistical Methods for Applied Educational Research",
+      "institution": "Harvard Graduate School of Education",
+      "role": "Teaching Fellow",
+      "terms": [
+        "Spring 2024"
+      ],
+      "highlights": [
+        "Led sections on applied statistical methods.",
+        "Worked individually with students on research papers."
+      ]
+    },
+    {
+      "course": "Scientific Citizenship Initiative",
+      "institution": "Harvard Medical School",
+      "role": "Pedagogy Fellow",
+      "terms": [
+        "Fall 2021",
+        "Spring 2022"
+      ],
+      "highlights": [
+        "Designed and programmed ethics simulations (HTML, CSS, JavaScript).",
+        "Created lesson plans and instructional materials for teachers.",
+        "Participated in ethics pedagogy discussions with Safra Center fellows."
+      ]
+    },
+    {
+      "course": "Philosophy and Research: An Introduction to Applied Philosophy",
+      "institution": "Harvard Graduate School of Arts and Sciences",
+      "role": "Instructor",
+      "terms": [
+        "January 2022"
+      ],
+      "highlights": [
+        "Designed syllabus from scratch.",
+        "Taught a 10-session intensive mini-course on philosophy and research."
+      ]
+    },
+    {
+      "course": "Ethical Questions in Higher Education",
+      "institution": "Harvard Graduate School of Education",
+      "role": "Teaching Fellow",
+      "terms": [
+        "Fall 2021"
+      ],
+      "highlights": [
+        "Designed and taught sessions on metaethics and argumentation.",
+        "Met regularly with students for office hours."
+      ]
+    },
+    {
+      "course": "Ethical Basis of the Practice of Public Health",
+      "institution": "Harvard School of Public Health",
+      "role": "Teaching Fellow",
+      "terms": [
+        "Summer 2020",
+        "Summer 2021"
+      ],
+      "highlights": [
+        "Designed and taught sessions on metaethics and argumentation.",
+        "Provided extensive writing support through daily office hours."
+      ]
+    },
+    {
+      "course": "Why Trust Research?",
+      "institution": "Harvard Graduate School of Arts and Sciences",
+      "role": "Instructor",
+      "terms": [
+        "January 2021"
+      ],
+      "highlights": [
+        "Designed syllabus from scratch.",
+        "Taught two sections meeting three times per week over two weeks."
+      ]
+    },
+    {
+      "course": "Art and Understanding",
+      "institution": "Harvard Graduate School of Education",
+      "role": "Teaching Fellow",
+      "terms": [
+        "Fall 2020"
+      ],
+      "highlights": [
+        "Led weekly sections on philosophy of art and epistemology.",
+        "Supported students on written work."
+      ]
     }
   ],
-  "portfolio": [
+  "service": [
     {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+      "organization": "LGBTQ@GSAS",
+      "role": "President",
+      "startDate": "2024-06",
+      "endDate": "present",
+      "highlights": [
+        "Expanded programming from 1\u20132 events/month to 5\u20136 events/month.",
+        "Built and trained a leadership team.",
+        "Established partnerships across Harvard."
+      ]
+    },
+    {
+      "organization": "Office of Equity, Diversity, Inclusion & Belonging, GSAS",
+      "role": "LGBTQ+-Focused Diversity and Inclusion Fellow",
+      "startDate": "2024-06",
+      "endDate": "2025-06",
+      "highlights": [
+        "Compiled and shared best practices for affinity groups.",
+        "Supported LGBTQ+ programming across GSAS."
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "organization": "Education for Development Foundation America",
+      "location": "Mercer Island, WA",
+      "role": "Executive Director",
+      "startDate": "2019-07",
+      "endDate": "2021-02",
+      "highlights": [
+        "Collaborated with international offices on fundraising and outreach.",
+        "Developed full-stack website for fundraising and administrative automation.",
+        "Pushed for organizational reforms to improve efficiency and quality."
+      ]
+    },
+    {
+      "organization": "Sushi Jiro @ Keppel Bay",
+      "location": "Singapore",
+      "role": "Operations Manager",
+      "startDate": "2018-11",
+      "endDate": "2019-03",
+      "highlights": [
+        "Opened a new restaurant branch.",
+        "Mediated communication between local and Japanese staff.",
+        "Built inventory and front-end operational systems.",
+        "Hired, trained, and managed floor staff."
+      ]
+    },
+    {
+      "organization": "Online Instruction (Private)",
+      "location": "Remote / Japan",
+      "role": "Computer Science Instructor",
+      "startDate": "2017-09",
+      "endDate": "2019-07",
+      "highlights": [
+        "Taught adult students in Japanese via Skype.",
+        "Designed individualized lessons aligned with learner goals."
+      ]
+    },
+    {
+      "organization": "Singapore Armed Forces Medical Training Institution",
+      "location": "Singapore",
+      "role": "Corporal First Class (Conscription)",
+      "startDate": "2015-08",
+      "endDate": "2017-08",
+      "highlights": [
+        "Supported curriculum digitization and transformation.",
+        "Built a full-stack 360-degree feedback platform.",
+        "Automated administrative systems including exams, rosters, and schedules."
+      ]
+    }
+  ],
+  "skills": [
+    "Python",
+    "R",
+    "Text analysis",
+    "Full-stack web development",
+    "C#",
+    "Haskell",
+    "VBA"
+  ],
+  "languages": [
+    {
+      "language": "Japanese",
+      "fluency": "proficient"
+    },
+    {
+      "language": "Mandarin",
+      "fluency": "proficient"
     }
   ]
 }
