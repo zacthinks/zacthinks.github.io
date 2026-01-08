@@ -2,7 +2,7 @@
 <svg width="1024px" height="1024px" viewBox="0 0 1774 1774" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <title>Sierpi%C5%84ski_triangle</title>
 <desc>Adapted from https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle#/media/File:Sierpinski_triangle.svg</desc>
-<path id="t" d="M 0 1 L .8660254 -.5 -.8660254 -.5 Z" fill="#000000"/>
+<path id="t" d="M 0 1 L .8660254 -.5 -.8660254 -.5 Z" fill="#FFF"/>
 <g id="d1">
  <use xlink:href="#t" transform="matrix(0.5, 0, 0, 0.5, 0, 0.5)"/>
  <use xlink:href="#t" transform="matrix(0.5, 0, 0, 0.5, 0.433013, -0.25)"/>

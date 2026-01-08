@@ -1,47 +1,55 @@
 {% include base_path %}
+
 <!-- Support for Academicons -->
-<link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
+<link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css" />
 
-<!-- Favicon (switched via JS for light/dark mode) -->
-<link id="site-favicon"
-      rel="icon"
-      type="image/png"
-      href="{{ base_path }}/images/favicon-light.png?v={{ site.time | date: '%s' }}">
+<!-- Favicons: native light/dark support -->
+<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-light.png?v={{ site.time | date: '%s' }}"
+  media="(prefers-color-scheme: light)">
 
+<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-dark.png?v={{ site.time | date: '%s' }}"
+  media="(prefers-color-scheme: dark)">
+
+<!-- JS fallback for browsers that ignore media queries on favicons -->
 <script>
-(function() {
-  // These URLs are rendered by Jekyll at build time
-  var lightIcon = "{{ base_path }}/images/favicon-light.png?v={{ site.time | date: '%s' }}";
-  var darkIcon  = "{{ base_path }}/images/favicon-dark.png?v={{ site.time | date: '%s' }}";
+  (function () {
+    var lightIcon = "{{ base_path }}/images/favicon-light.png?v={{ site.time | date: '%s' }}";
+    var darkIcon = "{{ base_path }}/images/favicon-dark.png?v={{ site.time | date: '%s' }}";
 
-  var link = document.getElementById('site-favicon');
-  if (!link) return;
+    function setFavicon(isDark) {
+      // Remove any existing favicons
+      var links = document.querySelectorAll('link[rel="icon"]');
+      links.forEach(function (link) {
+        link.parentNode.removeChild(link);
+      });
 
-  function setFavicon(isDark) {
-    link.href = isDark ? darkIcon : lightIcon;
-  }
+      // Insert a fresh one
+      var link = document.createElement("link");
+      link.rel = "icon";
+      link.type = "image/png";
+      link.href = isDark ? darkIcon : lightIcon;
+      document.head.appendChild(link);
+    }
 
-  // Detect current color scheme
-  var mql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
-  if (mql) {
+    if (!window.matchMedia) {
+      setFavicon(false);
+      return;
+    }
+
+    var mql = window.matchMedia("(prefers-color-scheme: dark)");
     setFavicon(mql.matches);
 
-    // Listen for changes (when you flip OS / browser theme)
     if (mql.addEventListener) {
-      mql.addEventListener('change', function(e) {
+      mql.addEventListener("change", function (e) {
         setFavicon(e.matches);
       });
     } else if (mql.addListener) {
-      // Older browsers
-      mql.addListener(function(e) {
+      // Safari < 14
+      mql.addListener(function (e) {
         setFavicon(e.matches);
       });
     }
-  } else {
-    // Fallback: default to light icon
-    setFavicon(false);
-  }
-})();
+  })();
 </script>
 
 <!-- end custom head snippets -->
