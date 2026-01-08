@@ -24,6 +24,7 @@ package-lock.json
 
 # Ignore GitHub specific folders
 .github/
+.vscode/
 
 # Ignore old CV data file
 _data/cv_old.json
