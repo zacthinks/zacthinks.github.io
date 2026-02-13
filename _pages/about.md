@@ -9,7 +9,7 @@ redirect_from:
 
 I'm an interdisciplinary methodologist specializing in using computers to facilitate large-scale text analyses.
 
-I develop computational tools and frameworks that help researchers work with large collections of text data, drawing on ideas from the social sciences, linguistics, and computer science. My work emphasizes both familiarity with the full landscape of computer-assisted text analysis tools and a deep understanding of the role of texts in social science research to best understand when to use what tools and how. I also collaborate with scholars across fields who work with large text datasets.
+Text data is a rich yet often underutilized source of information in the social sciences. I develop computational tools and frameworks that enable researchers to work with large collections of text data, drawing on ideas from the social sciences, linguistics, and computer science. My work starts from the premise that different fields have different concerns and epistemic commitments, so translating advances in computer science into tools for social‑science research requires both familiarity with the full landscape of computer-assisted text analysis tools and a deep understanding of the role of texts in social science research translational work. I design methods and workflows that bring these advances into social‑science practice without sacrificing rigor, validity, transparency, replicability, or interpretive nuance—ultimately helping bridge long‑standing methodological boundaries and expanding the evidence base for understanding complex social phenomena.
 
 Additionally, I study histories of methodological tools and debates, both to enrich and inform our current methodological resources and to shed light on the nature of research itself.
 
@@ -27,12 +27,20 @@ Currently, my research projects form three clusters: computer-assisted text anal
       This project traces how text analysis methods have evolved—from early pre-computational counting systems to the first wave of computer-based tools—and examines the problems each generation of methods was designed to solve. It uses this historical trajectory to clarify how computational availability reshaped methodological priorities and what this means for designing tools that genuinely support human text analysis today.
     </li>
     <li>
+      <strong>ITM: Interactive Topic Model</strong><br>
+      [ITM](https://github.com/zacthinks/InteractiveTopicModel/) is a framework and software package for uncovering topics in text. It is built to frontend the researchers' interpretive capacity, be robust to algorithmic bias, and as a springboard for downstream analyses.
+    </li>
+    <li>
       <strong>LIPE: Latent Interview Protocol Engineer</strong><br>
-      LIPE is a software package for organizing and exploring large collections of interview transcripts, helping researchers recover the implicit structure of semi-structured interviews. It shows how computational techniques can assist in navigating large text datasets without replacing qualitative judgment.
+      [LIPE](https://github.com/zacthinks/lipe/) is a framework and software package for organizing and exploring large collections of interview transcripts, helping researchers recover the implicit structure of interviews as a research finding in itself. It shows how computational techniques can assist in navigating large text datasets without replacing qualitative judgment.
+    </li>
+    <li>
+      <strong>I-CATA: Inferential Computer-Assisted Text Analyses</strong><br>
+      (WIP) I-CATA is a framework and software for end-to-end inferential analyses with text. It combines elements of research design for rigorous inference, qualitative data analysis, and machine learning to allow researchers to use texts for inference at scale without sacrificing interpretive nuance.
     </li>
     <li>
       <strong>Representing Texts as Hierarchical Propositions (HiPr)</strong><br>
-      HiPr is a software package that proposes a transparent, semantics-driven alternative to traditional word-count representations by modeling texts as collections of propositions that preserve relational information lost in bag-of-words approaches. Each proposition carries internal structure and supports entailment relations, allowing researchers to find patterns in richer semantic details.
+      [HiPr](https://github.com/zacthinks/HiPr) is a software package that proposes a transparent, semantics-driven alternative to traditional word-count representations by modeling texts as collections of propositions that preserve relational information lost in bag-of-words approaches. Each proposition carries internal structure and supports entailment relations, allowing researchers to find patterns in richer semantic details.
     </li>
   </ul>
 </details>
