@@ -28,11 +28,11 @@ Currently, my research projects form three clusters: computer-assisted text anal
     </li>
     <li>
       <strong>ITM: Interactive Topic Model</strong><br>
-      [ITM](https://github.com/zacthinks/InteractiveTopicModel/) is a framework and software package for uncovering topics in text. It is built to frontend the researchers' interpretive capacity, be robust to algorithmic bias, and as a springboard for downstream analyses.
+      <a href="https://github.com/zacthinks/InteractiveTopicModel/">ITM</a> is a framework and software package for uncovering topics in text. It is built to frontend the researchers' interpretive capacity, be robust to algorithmic bias, and as a springboard for downstream analyses.
     </li>
     <li>
       <strong>LIPE: Latent Interview Protocol Engineer</strong><br>
-      [LIPE](https://github.com/zacthinks/lipe/) is a framework and software package for organizing and exploring large collections of interview transcripts, helping researchers recover the implicit structure of interviews as a research finding in itself. It shows how computational techniques can assist in navigating large text datasets without replacing qualitative judgment.
+      <a href="https://github.com/zacthinks/lipe/">LIPE</a> is a framework and software package for organizing and exploring large collections of interview transcripts, helping researchers recover the implicit structure of interviews as a research finding in itself. It shows how computational techniques can assist in navigating large text datasets without replacing qualitative judgment.
     </li>
     <li>
       <strong>I-CATA: Inferential Computer-Assisted Text Analyses</strong><br>
@@ -40,7 +40,7 @@ Currently, my research projects form three clusters: computer-assisted text anal
     </li>
     <li>
       <strong>Representing Texts as Hierarchical Propositions (HiPr)</strong><br>
-      [HiPr](https://github.com/zacthinks/HiPr) is a software package that proposes a transparent, semantics-driven alternative to traditional word-count representations by modeling texts as collections of propositions that preserve relational information lost in bag-of-words approaches. Each proposition carries internal structure and supports entailment relations, allowing researchers to find patterns in richer semantic details.
+      <a href="https://github.com/zacthinks/HiPr">HiPr</a> is a software package that proposes a transparent, semantics-driven alternative to traditional word-count representations by modeling texts as collections of propositions that preserve relational information lost in bag-of-words approaches. Each proposition carries internal structure and supports entailment relations, allowing researchers to find patterns in richer semantic details.
     </li>
   </ul>
 </details>
