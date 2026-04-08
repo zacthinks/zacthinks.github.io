@@ -16,6 +16,9 @@ main:
 
   - title: "Teaching"
     url: /    
+
+  - title: "Portfolio"
+    url: /portfolio/
         
   - title: "Blog Posts"
     url: /

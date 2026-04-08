@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AERA Program Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" defer></script>
+    <script type="module" src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+    <header class="topbar">
+      <h1>AERA 2026 Interactive Program Map</h1>
+      <p>Explore sessions and papers with keyword and semantic search.</p>
+    </header>
+
+    <main class="layout">
+      <section class="panel controls-panel">
+        <h2>Filters</h2>
+
+        <label for="dayFilter">Day</label>
+        <select id="dayFilter">
+          <option value="">All days</option>
+        </select>
+
+        <label for="sessionTypeFilter">Session Type</label>
+        <select id="sessionTypeFilter">
+          <option value="">All session types</option>
+        </select>
+
+        <label for="recordTypeFilter">Record Type</label>
+        <select id="recordTypeFilter">
+          <option value="">All records</option>
+          <option value="session">session</option>
+          <option value="paper">paper</option>
+        </select>
+
+        <div class="time-grid">
+          <div>
+            <label for="startTime">Start After</label>
+            <input id="startTime" type="range" min="0" max="1439" step="15" value="0" />
+            <div id="startTimeLabel" class="range-label">12:00 AM</div>
+          </div>
+          <div>
+            <label for="endTime">End Before</label>
+            <input id="endTime" type="range" min="0" max="1439" step="15" value="1439" />
+            <div id="endTimeLabel" class="range-label">11:59 PM</div>
+          </div>
+        </div>
+
+        <label for="keywordInput">Keyword Search</label>
+        <input id="keywordInput" type="text" placeholder="" />
+        <p class="hint">Keywords are separated by spaces. Rows must match all terms.</p>
+
+        <label for="semanticInput">Semantic Search</label>
+        <div class="semantic-row">
+          <input id="semanticInput" type="text" placeholder="" />
+          <button id="semanticBtn" type="button">Run</button>
+          <button id="clearSemanticBtn" type="button" class="ghost">Clear</button>
+        </div>
+        <p id="semanticStatus" class="hint">Semantic search idle.</p>
+        <div id="semanticLegend" class="semantic-legend hidden" aria-live="polite">
+          <div class="semantic-legend-title">Semantic similarity</div>
+          <div class="semantic-gradient"></div>
+          <div class="semantic-scale">
+            <span id="semanticMinLabel">low</span>
+            <span id="semanticMaxLabel">high</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel map-panel">
+        <div id="plot"></div>
+      </section>
+
+      <aside class="panel detail-panel">
+        <h2>Details</h2>
+        <div id="detailsContent" class="details-content">
+          Click a point to view session/paper details.
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>
