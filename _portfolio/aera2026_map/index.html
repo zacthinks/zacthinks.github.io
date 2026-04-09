@@ -16,9 +16,21 @@
   </head>
   <body>
     <div class="page-bg" aria-hidden="true"></div>
+    <div id="loadingScreen" class="loading-screen" role="status" aria-live="polite" aria-label="Loading program map">
+      <div class="loading-card">
+        <div class="loading-spinner" aria-hidden="true"></div>
+        <div>
+          <div class="loading-title">Loading program data</div>
+          <div id="loadingMessage" class="loading-message">Fetching and preparing the map...</div>
+        </div>
+        <div class="loading-bar" aria-hidden="true">
+          <div class="loading-bar-fill"></div>
+        </div>
+      </div>
+    </div>
     <header class="topbar">
       <h1>AERA 2026 Interactive Program Map</h1>
-      <p>Explore sessions and papers with keyword and semantic search. Click on a point to view details. Events with similar abstracts are closer to each other. By <a href="https://zacthinks.github.io">Zac Lim</a>.</p>
+      <p>Explore sessions and papers with keyword and semantic search.</p>
     </header>
 
     <main class="layout">

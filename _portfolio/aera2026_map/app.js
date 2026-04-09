@@ -1,5 +1,8 @@
 import { pipeline } from "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2";
 
+const LOCAL_MODEL_PATH = "./models/all-MiniLM-L6-v2";
+const REMOTE_MODEL_ID = "Xenova/all-MiniLM-L6-v2";
+
 const state = {
   items: [],
   keywordTerms: [],
@@ -31,6 +34,8 @@ const semanticStatusEl = document.getElementById("semanticStatus");
 const semanticLegendEl = document.getElementById("semanticLegend");
 const semanticMinLabelEl = document.getElementById("semanticMinLabel");
 const semanticMaxLabelEl = document.getElementById("semanticMaxLabel");
+const loadingScreenEl = document.getElementById("loadingScreen");
+const loadingMessageEl = document.getElementById("loadingMessage");
 
 function minutesToClock(totalMinutes) {
   const minutes = Math.max(0, Math.min(1439, Number(totalMinutes) || 0));
@@ -69,6 +74,20 @@ function getBaseColor(item) {
 
 function setStatus(text) {
   semanticStatusEl.textContent = text;
+}
+
+function setLoadingMessage(text) {
+  if (loadingMessageEl) {
+    loadingMessageEl.textContent = text;
+  }
+}
+
+function hideLoadingScreen() {
+  if (!loadingScreenEl) return;
+  loadingScreenEl.classList.add("hidden");
+  window.setTimeout(() => {
+    loadingScreenEl.remove();
+  }, 220);
 }
 
 function itemMatchesKeyword(item, terms) {
@@ -220,7 +239,15 @@ function renderDetails(item) {
 async function ensureSemanticExtractor() {
   if (state.semanticExtractor) return state.semanticExtractor;
   setStatus("Loading semantic model in browser...");
-  state.semanticExtractor = await pipeline("feature-extraction", "Xenova/all-MiniLM-L6-v2");
+
+  try {
+    state.semanticExtractor = await pipeline("feature-extraction", LOCAL_MODEL_PATH);
+    return state.semanticExtractor;
+  } catch (localError) {
+    console.warn("Local semantic model load failed, falling back to remote model.", localError);
+  }
+
+  state.semanticExtractor = await pipeline("feature-extraction", REMOTE_MODEL_ID);
   return state.semanticExtractor;
 }
 
@@ -332,8 +359,10 @@ function attachEvents() {
 
 async function loadData() {
   const dataFiles = ["./data_part1.json", "./data_part2.json"];
+  setLoadingMessage("Loading data files...");
   const payloads = await Promise.all(
     dataFiles.map(async (path) => {
+      setLoadingMessage(`Loading ${path.replace("./", "")}`);
       const response = await fetch(path, { cache: "no-store" });
       if (!response.ok) {
         throw new Error(`Failed to load ${path}: ${response.status}`);
@@ -356,6 +385,7 @@ async function loadData() {
 }
 
 async function initPlot() {
+  setLoadingMessage("Building the map...");
   const trace = {
     x: state.items.map((d) => d.umap_x),
     y: state.items.map((d) => d.umap_y),
@@ -389,6 +419,7 @@ async function main() {
     startTimeLabelEl.textContent = minutesToClock(startTimeEl.value);
     endTimeLabelEl.textContent = minutesToClock(endTimeEl.value);
 
+    setLoadingMessage("Preparing the interface...");
     await loadData();
     populateFilterOptions();
     await initPlot();
@@ -398,6 +429,8 @@ async function main() {
     console.error(err);
     setStatus("Failed to initialize app. See console.");
     detailsEl.textContent = "App initialization failed. Please check data.json and console output.";
+  } finally {
+    hideLoadingScreen();
   }
 }
 
