@@ -286,10 +286,10 @@ function updatePlot() {
   updateSemanticLegend(style);
 
   const visibleCount = visibleIndices.length;
-  const semanticPart = state.semanticScores ? " with semantic scoring" : "";
+  const semanticPart = state.semanticScores ? " with semantic filter" : "";
   const thresholdPart =
     state.semanticScores && state.semanticThreshold !== null
-      ? ` (cosine >= ${state.semanticThreshold.toFixed(3)})`
+      ? ` (cosine similarity >= ${state.semanticThreshold.toFixed(3)})`
       : "";
   setPlotStatus(`${visibleCount}/${state.items.length} points visible${semanticPart}${thresholdPart}.`);
 }
