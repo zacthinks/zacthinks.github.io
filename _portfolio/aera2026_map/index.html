@@ -30,7 +30,8 @@
     </div>
     <header class="topbar">
       <h1>AERA 2026 Interactive Program Map</h1>
-      <p>Explore sessions and papers with keyword and semantic search. Click on a point for detailed info. The more similar abstracts are, the closer they appear on the map. Built by <a href="https://zacthinks.github.io/" target="_blank"  rel="noopener noreferrer">Zac Lim</a>.</p>
+      <p>Explore sessions and papers with keyword and semantic search. Click on a point for detailed info. The more similar abstracts are, the closer they appear on the map.</p>
+      <p>Built by <a href="https://zacthinks.github.io/" target="_blank"  rel="noopener noreferrer">Zac Lim</a>. <a href="mailto:zlim@g.harvard.edu">Send me an email</a> if you'd like to meet up while at AERA to discuss computer-assisted text analyses techniques!</p>
     </header>
 
     <main class="layout">
@@ -77,19 +78,28 @@
           <button id="semanticBtn" type="button">Run</button>
           <button id="clearSemanticBtn" type="button" class="ghost">Clear</button>
         </div>
+        <p class="hint">Semantic search matches by meaning, not exact words. We compute how similar each abstract is to your query, whether you enter one word, a phrase, or a full paragraph.</p>
         <p id="semanticStatus" class="hint">Semantic search idle.</p>
         <div id="semanticLegend" class="semantic-legend hidden" aria-live="polite">
           <div class="semantic-legend-title">Semantic similarity</div>
-          <div class="semantic-gradient"></div>
+          <div class="semantic-gradient-track">
+            <div class="semantic-gradient"></div>
+            <input id="semanticThreshold" type="range" min="0" max="100" step="1" value="0" disabled aria-label="Minimum cosine similarity" />
+          </div>
           <div class="semantic-scale">
             <span id="semanticMinLabel">low</span>
             <span id="semanticMaxLabel">high</span>
+          </div>
+          <div class="semantic-threshold-row">
+            <label for="semanticThreshold">Min cosine similarity</label>
+            <span id="semanticThresholdValue" class="semantic-threshold-value">Any</span>
           </div>
         </div>
       </section>
 
       <section class="panel map-panel">
         <div id="plot"></div>
+        <div id="plotStatus" class="plot-status" aria-live="polite"></div>
       </section>
 
       <aside class="panel detail-panel">

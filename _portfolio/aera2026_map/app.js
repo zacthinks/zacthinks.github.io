@@ -8,6 +8,9 @@ const state = {
   keywordTerms: [],
   semanticQuery: "",
   semanticScores: null,
+  semanticThreshold: null,
+  semanticDomain: null,
+  semanticColorDomain: null,
   semanticExtractor: null,
   pointOrder: [],
 };
@@ -34,6 +37,9 @@ const semanticStatusEl = document.getElementById("semanticStatus");
 const semanticLegendEl = document.getElementById("semanticLegend");
 const semanticMinLabelEl = document.getElementById("semanticMinLabel");
 const semanticMaxLabelEl = document.getElementById("semanticMaxLabel");
+const semanticThresholdEl = document.getElementById("semanticThreshold");
+const semanticThresholdValueEl = document.getElementById("semanticThresholdValue");
+const plotStatusEl = document.getElementById("plotStatus");
 const loadingScreenEl = document.getElementById("loadingScreen");
 const loadingMessageEl = document.getElementById("loadingMessage");
 
@@ -76,6 +82,36 @@ function setStatus(text) {
   semanticStatusEl.textContent = text;
 }
 
+function setPlotStatus(text) {
+  if (plotStatusEl) {
+    plotStatusEl.textContent = text;
+  }
+}
+
+function scoreToSliderValue(score) {
+  if (!state.semanticDomain) return 0;
+  const range = state.semanticDomain.max - state.semanticDomain.min;
+  if (range <= 0) return 0;
+  const normalized = (score - state.semanticDomain.min) / range;
+  return Math.round(Math.max(0, Math.min(1, normalized)) * 100);
+}
+
+function sliderValueToScore(value) {
+  if (!state.semanticDomain) return null;
+  const t = Math.max(0, Math.min(100, Number(value) || 0)) / 100;
+  return state.semanticDomain.min + t * (state.semanticDomain.max - state.semanticDomain.min);
+}
+
+function updateSemanticThresholdLabel() {
+  if (!semanticThresholdValueEl || !state.semanticDomain || state.semanticThreshold === null) {
+    if (semanticThresholdValueEl) {
+      semanticThresholdValueEl.textContent = "Any";
+    }
+    return;
+  }
+  semanticThresholdValueEl.textContent = `>= ${state.semanticThreshold.toFixed(3)}`;
+}
+
 function setLoadingMessage(text) {
   if (loadingMessageEl) {
     loadingMessageEl.textContent = text;
@@ -113,11 +149,14 @@ function passesFilters(item) {
 
 function computeVisibleIndices() {
   const indices = [];
+  const hasSemantic = Array.isArray(state.semanticScores);
   for (let i = 0; i < state.items.length; i += 1) {
     const item = state.items[i];
     const filterOk = passesFilters(item);
     const keywordOk = itemMatchesKeyword(item, state.keywordTerms);
-    if (filterOk && keywordOk) {
+    const semanticOk =
+      !hasSemantic || state.semanticThreshold === null || state.semanticScores[i] >= state.semanticThreshold;
+    if (filterOk && keywordOk && semanticOk) {
       indices.push(i);
     }
   }
@@ -131,6 +170,20 @@ function percentile(values, p) {
   return sorted[idx];
 }
 
+function computeSemanticColorDomain(scores) {
+  if (!Array.isArray(scores) || scores.length === 0) {
+    return { min: 0, max: 1 };
+  }
+  let min = percentile(scores, 0.05);
+  let max = percentile(scores, 0.95);
+  if (!Number.isFinite(min)) min = 0;
+  if (!Number.isFinite(max)) max = min + 1;
+  if (max - min < 1e-6) {
+    max = min + 1e-6;
+  }
+  return { min, max };
+}
+
 function buildMarkerStyle(visibleIndices) {
   const hasSemantic = Array.isArray(state.semanticScores);
   const colors = [];
@@ -140,12 +193,9 @@ function buildMarkerStyle(visibleIndices) {
   let minS = 0;
   let maxS = 1;
   if (hasSemantic) {
-    const visibleScores = visibleIndices.map((i) => state.semanticScores[i]);
-    minS = percentile(visibleScores, 0.05);
-    maxS = percentile(visibleScores, 0.95);
-    if (maxS - minS < 1e-6) {
-      maxS = minS + 1e-6;
-    }
+    const domain = state.semanticColorDomain || computeSemanticColorDomain(state.semanticScores);
+    minS = domain.min;
+    maxS = domain.max;
   }
 
   for (const i of visibleIndices) {
@@ -176,12 +226,42 @@ function updateSemanticLegend(style) {
     semanticLegendEl.classList.add("hidden");
     semanticMinLabelEl.textContent = "low";
     semanticMaxLabelEl.textContent = "high";
+    if (semanticThresholdEl) {
+      semanticThresholdEl.disabled = true;
+      semanticThresholdEl.setAttribute("disabled", "disabled");
+      semanticThresholdEl.value = "0";
+    }
+    updateSemanticThresholdLabel();
     return;
   }
 
+  if (!state.semanticDomain && Array.isArray(state.semanticScores) && state.semanticScores.length) {
+    const minScore = Math.min(...state.semanticScores);
+    const maxScore = Math.max(...state.semanticScores);
+    state.semanticDomain = {
+      min: Number.isFinite(minScore) ? minScore : 0,
+      max: Number.isFinite(maxScore) && maxScore > minScore ? maxScore : (Number.isFinite(minScore) ? minScore + 1e-6 : 1),
+    };
+  }
+
+  if (state.semanticThreshold === null && state.semanticDomain) {
+    state.semanticThreshold = state.semanticDomain.min;
+  }
+
   semanticLegendEl.classList.remove("hidden");
-  semanticMinLabelEl.textContent = style.minS.toFixed(3);
-  semanticMaxLabelEl.textContent = style.maxS.toFixed(3);
+  const minLabel = state.semanticDomain ? state.semanticDomain.min : style.minS;
+  const maxLabel = state.semanticDomain ? state.semanticDomain.max : style.maxS;
+  semanticMinLabelEl.textContent = minLabel.toFixed(3);
+  semanticMaxLabelEl.textContent = maxLabel.toFixed(3);
+
+  if (semanticThresholdEl) {
+    semanticThresholdEl.removeAttribute("disabled");
+    semanticThresholdEl.disabled = false;
+    if (state.semanticThreshold !== null) {
+      semanticThresholdEl.value = String(scoreToSliderValue(state.semanticThreshold));
+    }
+  }
+  updateSemanticThresholdLabel();
 }
 
 function updatePlot() {
@@ -207,7 +287,11 @@ function updatePlot() {
 
   const visibleCount = visibleIndices.length;
   const semanticPart = state.semanticScores ? " with semantic scoring" : "";
-  setStatus(`${visibleCount}/${state.items.length} points visible${semanticPart}.`);
+  const thresholdPart =
+    state.semanticScores && state.semanticThreshold !== null
+      ? ` (cosine >= ${state.semanticThreshold.toFixed(3)})`
+      : "";
+  setPlotStatus(`${visibleCount}/${state.items.length} points visible${semanticPart}${thresholdPart}.`);
 }
 
 function parseDaySortKey(dayLabel) {
@@ -257,6 +341,9 @@ async function runSemanticSearch() {
 
   if (!query) {
     state.semanticScores = null;
+    state.semanticThreshold = null;
+    state.semanticDomain = null;
+    state.semanticColorDomain = null;
     updatePlot();
     setStatus("Semantic search cleared.");
     return;
@@ -273,6 +360,19 @@ async function runSemanticSearch() {
     const queryVec = Array.from(out.data);
 
     state.semanticScores = state.items.map((item) => cosineSimilarity(queryVec, item.embedding));
+    state.semanticColorDomain = computeSemanticColorDomain(state.semanticScores);
+    const minScore = Math.min(...state.semanticScores);
+    const maxScore = Math.max(...state.semanticScores);
+    state.semanticDomain = {
+      min: Number.isFinite(minScore) ? minScore : 0,
+      max: Number.isFinite(maxScore) && maxScore > minScore ? maxScore : (Number.isFinite(minScore) ? minScore + 1e-6 : 1),
+    };
+    state.semanticThreshold = state.semanticDomain.min;
+    if (semanticThresholdEl) {
+      semanticThresholdEl.value = "0";
+      semanticThresholdEl.disabled = false;
+    }
+    updateSemanticThresholdLabel();
     updatePlot();
     setStatus("Semantic search complete.");
   } catch (err) {
@@ -344,9 +444,29 @@ function attachEvents() {
   clearSemanticBtnEl.addEventListener("click", () => {
     semanticInputEl.value = "";
     state.semanticScores = null;
+    state.semanticThreshold = null;
+    state.semanticDomain = null;
+    state.semanticColorDomain = null;
+    if (semanticThresholdEl) {
+      semanticThresholdEl.value = "0";
+      semanticThresholdEl.disabled = true;
+    }
+    updateSemanticThresholdLabel();
     setStatus("Semantic search idle.");
     updatePlot();
   });
+
+  if (semanticThresholdEl) {
+    const onSemanticThresholdChange = () => {
+      if (!Array.isArray(state.semanticScores)) return;
+      state.semanticThreshold = sliderValueToScore(semanticThresholdEl.value);
+      updateSemanticThresholdLabel();
+      updatePlot();
+    };
+
+    semanticThresholdEl.addEventListener("input", onSemanticThresholdChange);
+    semanticThresholdEl.addEventListener("change", onSemanticThresholdChange);
+  }
 
   plotEl.on("plotly_click", (eventData) => {
     const point = eventData?.points?.[0];
