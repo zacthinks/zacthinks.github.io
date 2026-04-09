@@ -478,7 +478,7 @@ function attachEvents() {
 }
 
 async function loadData() {
-  const dataFiles = ["./data_part1.json", "./data_part2.json"];
+  const dataFiles = ["./data_part1.json", "./data_part2.json", "./data_part3.json"];
   setLoadingMessage("Loading data files...");
   const payloads = await Promise.all(
     dataFiles.map(async (path) => {
