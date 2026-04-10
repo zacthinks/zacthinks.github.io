@@ -5,6 +5,9 @@ const REMOTE_MODEL_ID = "Xenova/all-MiniLM-L6-v2";
 
 const state = {
   items: [],
+  viewMode: "2d",
+  threeDLoaded: false,
+  threeDLoadPromise: null,
   keywordTerms: [],
   semanticQuery: "",
   semanticScores: null,
@@ -39,6 +42,8 @@ const semanticMinLabelEl = document.getElementById("semanticMinLabel");
 const semanticMaxLabelEl = document.getElementById("semanticMaxLabel");
 const semanticThresholdEl = document.getElementById("semanticThreshold");
 const semanticThresholdValueEl = document.getElementById("semanticThresholdValue");
+const view2dBtnEl = document.getElementById("view2dBtn");
+const view3dBtnEl = document.getElementById("view3dBtn");
 const plotStatusEl = document.getElementById("plotStatus");
 const loadingScreenEl = document.getElementById("loadingScreen");
 const loadingMessageEl = document.getElementById("loadingMessage");
@@ -58,6 +63,25 @@ function parseTerms(text) {
     .trim()
     .split(/\s+/)
     .filter(Boolean);
+}
+
+function wrapHoverText(text, maxLineLength = 68) {
+  const source = (text || "").trim();
+  if (!source) return "";
+  const words = source.split(/\s+/);
+  const lines = [];
+  let line = "";
+  for (const word of words) {
+    const candidate = line ? `${line} ${word}` : word;
+    if (candidate.length > maxLineLength && line) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = candidate;
+    }
+  }
+  if (line) lines.push(line);
+  return lines.join("<br>");
 }
 
 function cosineSimilarity(a, b) {
@@ -118,12 +142,15 @@ function setLoadingMessage(text) {
   }
 }
 
+function showLoadingScreen(message = "Loading...") {
+  if (!loadingScreenEl) return;
+  setLoadingMessage(message);
+  loadingScreenEl.classList.remove("hidden");
+}
+
 function hideLoadingScreen() {
   if (!loadingScreenEl) return;
   loadingScreenEl.classList.add("hidden");
-  window.setTimeout(() => {
-    loadingScreenEl.remove();
-  }, 220);
 }
 
 function itemMatchesKeyword(item, terms) {
@@ -184,11 +211,71 @@ function computeSemanticColorDomain(scores) {
   return { min, max };
 }
 
+function setViewMode(viewMode) {
+  state.viewMode = viewMode;
+  if (view2dBtnEl) {
+    view2dBtnEl.classList.toggle("active", viewMode === "2d");
+  }
+  if (view3dBtnEl) {
+    view3dBtnEl.classList.toggle("active", viewMode === "3d");
+  }
+}
+
+function bindPlotClickHandler() {
+  plotEl.removeAllListeners?.("plotly_click");
+  plotEl.on("plotly_click", (eventData) => {
+    const point = eventData?.points?.[0];
+    if (!point) return;
+    const idx = Number(point.customdata);
+    if (!Number.isFinite(idx)) return;
+    const item = state.items[idx];
+    if (item) renderDetails(item);
+  });
+}
+
+async function load3DDataIfNeeded() {
+  if (state.threeDLoaded) return;
+  if (state.threeDLoadPromise) {
+    await state.threeDLoadPromise;
+    return;
+  }
+
+  state.threeDLoadPromise = (async () => {
+    showLoadingScreen("Loading 3D coordinates...");
+    const dataFiles = ["./data_3d_part1.json", "./data_3d_part2.json", "./data_3d_part3.json"];
+    const payloads = await Promise.all(
+      dataFiles.map(async (path) => {
+        setLoadingMessage(`Loading ${path.replace("./", "")}`);
+        const response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`Failed to load ${path}: ${response.status}`);
+        }
+        return response.json();
+      })
+    );
+
+    const entries = payloads.flatMap((payload) => payload.items || []);
+    for (const entry of entries) {
+      const idx = Number(entry.id);
+      if (!Number.isFinite(idx) || idx < 0 || idx >= state.items.length) continue;
+      state.items[idx].umap_x_1 = Number(entry.umap_x_1) || 0;
+      state.items[idx].umap_y_1 = Number(entry.umap_y_1) || 0;
+      state.items[idx].umap_z_1 = Number(entry.umap_z_1) || 0;
+    }
+    state.threeDLoaded = true;
+  })();
+
+  try {
+    await state.threeDLoadPromise;
+  } finally {
+    state.threeDLoadPromise = null;
+    hideLoadingScreen();
+  }
+}
+
 function buildMarkerStyle(visibleIndices) {
   const hasSemantic = Array.isArray(state.semanticScores);
   const colors = [];
-  const opacity = [];
-  const sizes = [];
 
   let minS = 0;
   let maxS = 1;
@@ -209,16 +296,12 @@ function buildMarkerStyle(visibleIndices) {
       const sat = 72;
       const light = 48 - Math.round(16 * clamped);
       colors.push(`hsl(${hue} ${sat}% ${light}%)`);
-      opacity.push(0.93);
-      sizes.push(8);
     } else {
       colors.push(getBaseColor(item));
-      opacity.push(0.9);
-      sizes.push(8);
     }
   }
 
-  return { colors, opacity, sizes, hasSemantic, minS, maxS };
+  return { colors, hasSemantic, minS, maxS };
 }
 
 function updateSemanticLegend(style) {
@@ -270,18 +353,22 @@ function updatePlot() {
 
   const x = visibleIndices.map((i) => state.items[i].umap_x);
   const y = visibleIndices.map((i) => state.items[i].umap_y);
-  const text = visibleIndices.map((i) => state.items[i].title);
+  const z = visibleIndices.map((i) => state.items[i].umap_z_1);
+  const text = visibleIndices.map((i) => wrapHoverText(state.items[i].title));
   const customdata = visibleIndices.map((i) => state.items[i].id);
 
-  Plotly.restyle(plotEl, {
+  const update = {
     x: [x],
     y: [y],
     text: [text],
     customdata: [customdata],
     "marker.color": [style.colors],
-    "marker.opacity": [style.opacity],
-    "marker.size": [style.sizes],
-  });
+  };
+  if (state.viewMode === "3d") {
+    update.z = [z];
+  }
+
+  Plotly.restyle(plotEl, update);
 
   updateSemanticLegend(style);
 
@@ -292,6 +379,69 @@ function updatePlot() {
       ? ` (cosine similarity >= ${state.semanticThreshold.toFixed(3)})`
       : "";
   setPlotStatus(`${visibleCount}/${state.items.length} points visible${semanticPart}${thresholdPart}.`);
+}
+
+function getTraceForCurrentView() {
+  const baseTrace = {
+    customdata: state.items.map((d) => d.id),
+    text: state.items.map((d) => wrapHoverText(d.title)),
+    hovertemplate: "%{text}<extra></extra>",
+    marker: {
+      color: state.items.map((d) => getBaseColor(d)),
+      line: { width: 0 },
+    },
+    mode: "markers",
+  };
+
+  if (state.viewMode === "3d") {
+    return {
+      ...baseTrace,
+      type: "scatter3d",
+      marker: {
+        ...baseTrace.marker,
+        size: 5,
+      },
+      x: state.items.map((d) => d.umap_x_1),
+      y: state.items.map((d) => d.umap_y_1),
+      z: state.items.map((d) => d.umap_z_1),
+    };
+  }
+
+  return {
+    ...baseTrace,
+    type: "scattergl",
+    x: state.items.map((d) => d.umap_x),
+    y: state.items.map((d) => d.umap_y),
+  };
+}
+
+function getLayoutForCurrentView() {
+  const baseLayout = {
+    margin: { l: 20, r: 10, b: 35, t: 15 },
+    paper_bgcolor: "rgba(0,0,0,0)",
+  };
+
+  if (state.viewMode === "3d") {
+    return {
+      ...baseLayout,
+      scene: {
+        bgcolor: "rgba(255,255,255,0.55)",
+        xaxis: { title: "", zeroline: false, gridcolor: "rgba(0,0,0,0.08)", showticklabels: false, ticks: "" },
+        yaxis: { title: "", zeroline: false, gridcolor: "rgba(0,0,0,0.08)", showticklabels: false, ticks: "" },
+        zaxis: { title: "", zeroline: false, gridcolor: "rgba(0,0,0,0.08)", showticklabels: false, ticks: "" },
+        camera: {
+          eye: { x: 1.55, y: 1.55, z: 1.2 },
+        },
+      },
+    };
+  }
+
+  return {
+    ...baseLayout,
+    plot_bgcolor: "rgba(255,255,255,0.55)",
+    xaxis: { title: "", zeroline: false, gridcolor: "rgba(0,0,0,0.08)", showticklabels: false, ticks: "" },
+    yaxis: { title: "", zeroline: false, gridcolor: "rgba(0,0,0,0.08)", showticklabels: false, ticks: "" },
+  };
 }
 
 function parseDaySortKey(dayLabel) {
@@ -468,13 +618,29 @@ function attachEvents() {
     semanticThresholdEl.addEventListener("change", onSemanticThresholdChange);
   }
 
-  plotEl.on("plotly_click", (eventData) => {
-    const point = eventData?.points?.[0];
-    if (!point) return;
-    const idx = point.customdata;
-    const item = state.items[idx];
-    if (item) renderDetails(item);
-  });
+  if (view2dBtnEl) {
+    view2dBtnEl.addEventListener("click", async () => {
+      if (state.viewMode === "2d") return;
+      setViewMode("2d");
+      await initPlot();
+      updatePlot();
+    });
+  }
+
+  if (view3dBtnEl) {
+    view3dBtnEl.addEventListener("click", async () => {
+      if (state.viewMode === "3d") return;
+      try {
+        await load3DDataIfNeeded();
+        setViewMode("3d");
+        await initPlot();
+        updatePlot();
+      } catch (err) {
+        console.error(err);
+        setStatus("Failed to load 3D coordinates.");
+      }
+    });
+  }
 }
 
 async function loadData() {
@@ -497,41 +663,25 @@ async function loadData() {
     embedding: Array.isArray(item.embedding) ? item.embedding : [],
     umap_x: Number(item.umap_x) || 0,
     umap_y: Number(item.umap_y) || 0,
+    umap_x_1: null,
+    umap_y_1: null,
+    umap_z_1: null,
     start_minutes: Number(item.start_minutes) || 0,
     end_minutes: Number(item.end_minutes) || 0,
     search_text: (item.search_text || "").toLowerCase(),
     id: index,
   }));
+  state.threeDLoaded = false;
 }
 
 async function initPlot() {
   setLoadingMessage("Building the map...");
-  const trace = {
-    x: state.items.map((d) => d.umap_x),
-    y: state.items.map((d) => d.umap_y),
-    mode: "markers",
-    type: "scattergl",
-    customdata: state.items.map((d) => d.id),
-    text: state.items.map((d) => d.title),
-    hovertemplate: "%{text}<extra></extra>",
-    marker: {
-      color: state.items.map((d) => getBaseColor(d)),
-      opacity: 0.9,
-      size: 8,
-      line: { width: 0 },
-    },
-  };
-
-  const layout = {
-    margin: { l: 20, r: 10, b: 35, t: 15 },
-    paper_bgcolor: "rgba(0,0,0,0)",
-    plot_bgcolor: "rgba(255,255,255,0.55)",
-    xaxis: { title: "", zeroline: false, gridcolor: "rgba(0,0,0,0.08)", showticklabels: false, ticks: "" },
-    yaxis: { title: "", zeroline: false, gridcolor: "rgba(0,0,0,0.08)", showticklabels: false, ticks: "" },
-  };
+  const trace = getTraceForCurrentView();
+  const layout = getLayoutForCurrentView();
 
   const config = { responsive: true, displaylogo: false };
   await Plotly.newPlot(plotEl, [trace], layout, config);
+  bindPlotClickHandler();
 }
 
 async function main() {
@@ -540,6 +690,7 @@ async function main() {
     endTimeLabelEl.textContent = minutesToClock(endTimeEl.value);
 
     setLoadingMessage("Preparing the interface...");
+    setViewMode("2d");
     await loadData();
     populateFilterOptions();
     await initPlot();

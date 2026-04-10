@@ -157,6 +157,29 @@ body {
   min-height: 70vh;
 }
 
+.view-toggle {
+  margin-top: 0.2rem;
+  margin-bottom: 0.45rem;
+  display: flex;
+  gap: 0.35rem;
+}
+
+.toggle-btn {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--ink);
+}
+
+.toggle-btn.active {
+  background: var(--accent-2);
+  border-color: transparent;
+  color: #fff;
+}
+
 h2 {
   margin: 0 0 0.9rem;
   font-family: "Fraunces", serif;
