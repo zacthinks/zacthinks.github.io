@@ -7,14 +7,23 @@ author_profile: true
 
 *This page is being updated.*
 
-## Computer-Assisted Text Analysis
+## Methods for Complex Evidence
 
-<!-- Substantive overview and project descriptions to be written with Zac. -->
+### Computer-Assisted Text Analysis
+<!-- Research agenda, papers, and TeAL link to be added with Zac. -->
 
-## Measurement, Validation, and Research Design
+### Geometric Coding
+<!-- Research approach, papers, and GeCo link to be added with Zac. -->
 
-<!-- Keep public description high-level until DBYS is public. -->
+<a id="lipe"></a>
+### LIPE
+<!-- Research project, papers/preprint, and software link to be added with Zac. -->
 
-## Methodological Development and Scientific Practice
+<a id="bag-of-ideas"></a>
+### Bag of Ideas
+<!-- Research project, papers/talks, and software link to be added with Zac. -->
 
-<!-- Substantive overview and project descriptions to be written with Zac. -->
+## Social, Historical, and Philosophical Studies of Scientific Practice
+
+### Methodological Partisanship
+<!-- Papers, dissertation relationship, and data-resource links to be added with Zac. -->
