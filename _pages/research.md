@@ -65,7 +65,7 @@ My research spans two mutually informing areas: **methods for complex evidence**
   <p>Bag of Ideas develops richer, inspectable representations of text using explicit linguistic structure at multiple granularities and levels of abstraction. The goal is to retain more of the relationships that matter for interpretation while remaining compatible with scalable statistical and machine-learning workflows.</p>
   <div class="project-entry__meta">
     <span><i class="fas fa-file-lines" aria-hidden="true"></i> <em>Bag of Ideas: Interpretable Semantic Representations for Text Analysis</em> — working paper</span>
-    <span><i class="fas fa-person-chalkboard" aria-hidden="true"></i> Text as Data 2026 lightning talk</span>
+    <span><i class="fas fa-person-chalkboard" aria-hidden="true"></i> Text as Data 2026</span>
     <span><i class="fas fa-code" aria-hidden="true"></i> Current software forthcoming; <a href="https://github.com/zacthinks/HiPr">HiPr</a> is an earlier implementation</span>
   </div>
 </article>
