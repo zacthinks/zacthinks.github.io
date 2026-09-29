@@ -89,22 +89,22 @@ My research spans two mutually informing areas: **methods for complex evidence**
 
 <article class="project-entry" id="methodological-partisanship">
   <div class="project-entry__top">
-    <div class="project-entry__title">Methodological Partisanship in Education Research</div>
+    <div class="project-entry__title">The Rise of Methodological Partisanship in Education Research</div>
   </div>
-  <p>I study the genealogy of qualitative-quantitative divisions in education research, including the development of methodological identities, philosophical labels, citation practices, and institutional conflicts, and how these shape methodological development and scientific practice.</p>
+  <p>This project traces the development and persistence of qualitative–quantitative divisions in education research, situating them within broader methodological divisions in the social sciences. It examines how citation practices, philosophical labels, methodological identities, and institutional conflict have shaped methodological discourse and research practice.</p>
   <div class="project-entry__meta">
     <span><i class="fas fa-file-lines" aria-hidden="true"></i> <em>The Rise of Methodological Partisanship in Education Research</em> — working paper</span>
     <span><i class="fas fa-database" aria-hidden="true"></i> Historical Corpus of Education Research — roughly one million full-text articles</span>
   </div>
 </article>
 
-<article class="project-entry" id="histories-of-methodological-development">
+<article class="project-entry" id="cata-history-crosscut">
   <div class="project-entry__top">
-    <div class="project-entry__title">Histories of Methodological Development</div>
+    <div class="project-entry__title">Computer-Assisted Text Analysis: A History and Framework</div>
   </div>
-  <p>I use historical work to study how methodological problems are defined, which solutions become available or legitimate, and how technical possibilities reshape research practice. The history of computer-assisted text analysis is one current case through which I examine these processes.</p>
+  <p>This is also a historical study of methodological development. Alongside developing a framework for computer-assisted text analysis, the project examines how changing technologies, methodological priorities, and research practices have shaped successive approaches to computational text analysis.</p>
   <div class="project-entry__meta">
-    <span><i class="fas fa-file-lines" aria-hidden="true"></i> Current work connects the history of CATA to the design of contemporary methodological infrastructure</span>
+    <span><i class="fas fa-arrow-up" aria-hidden="true"></i> Cross-cutting project: <a href="#computer-assisted-text-analysis">see the fuller description above</a></span>
   </div>
 </article>
 
@@ -112,7 +112,7 @@ My research spans two mutually informing areas: **methods for complex evidence**
   <div class="project-entry__top">
     <div class="project-entry__title">Philosophy of Scientific Practice</div>
   </div>
-  <p>I am also interested in broader questions about research as an epistemic practice: what researchers can reasonably aim to know, how methodological standards acquire authority, and how scientific institutions can organize inquiry under conditions of uncertainty and disagreement.</p>
+  <p>I study research as a social epistemic practice: what researchers can reasonably aim to know, how methodological standards acquire authority, and how scientific institutions can organize inquiry under conditions of uncertainty and disagreement.</p>
   <div class="project-entry__meta">
     <span class="project-entry__status"><i class="fas fa-compass" aria-hidden="true"></i> Ongoing theoretical work</span>
   </div>
