@@ -21,7 +21,7 @@ author_profile: false
 
   <div class="teal-badges">
     <span><i class="fas fa-code-branch" aria-hidden="true"></i> Development release 0.2.0</span>
-    <span><i class="fab fa-python" aria-hidden="true"></i> Python 3.10+</span>
+    <span><i class="fab fa-python" aria-hidden="true"></i> Python 3.11+</span>
     <span><i class="fas fa-scale-balanced" aria-hidden="true"></i> MIT License</span>
   </div>
 </section>
