@@ -5,6 +5,8 @@ permalink: /research/
 author_profile: true
 ---
 
+*This page is being updated.*
+
 ## Computer-Assisted Text Analysis
 
 <!-- Substantive overview and project descriptions to be written with Zac. -->
