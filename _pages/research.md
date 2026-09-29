@@ -13,13 +13,13 @@ My research spans two mutually informing areas: **methods for complex evidence**
 
 <article class="project-entry" id="computer-assisted-text-analysis">
   <div class="project-entry__top">
-    <div class="project-entry__title">Computer-Assisted Text Analysis</div>
+    <div class="project-entry__title">Computer-Assisted Text Analysis: A History and Framework</div>
     <div class="project-entry__links">
       <a class="project-icon-link" href="/teal/" title="TeAL project page" aria-label="TeAL project page"><i class="fas fa-file-lines" aria-hidden="true"></i></a>
       <a class="project-icon-link" href="https://github.com/zacthinks/text-analysis-lab" title="TeAL on GitHub" aria-label="TeAL on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
     </div>
   </div>
-  <p>I study how computational tools can support multi-stage text analysis without making the resulting workflows opaque or methodologically brittle. This work combines the history of computer-assisted text analysis with the development of a general framework for transparent, intentional, rigorous, and reproducible analysis.</p>
+  <p>I study the history of the intersection between computational methods and text analysis to ask what it would take for computer-assisted text analysis to become a more established and durable methodological tradition. This work traces recurring approaches across changing labels and technologies, examines why particular methods and infrastructures have risen and fallen in use, and develops a broader framework for computer-assisted text analysis that is not tied to any single generation of tools.</p>
   <div class="project-entry__meta">
     <span><i class="fas fa-file-lines" aria-hidden="true"></i> <em>Computer-Assisted Text Analysis: A History and Framework</em> — working paper</span>
     <span><i class="fas fa-code" aria-hidden="true"></i> Software: <a href="/teal/">TeAL</a></span>
@@ -34,7 +34,7 @@ My research spans two mutually informing areas: **methods for complex evidence**
       <a class="project-icon-link" href="https://github.com/zacthinks/GeCo" title="GeCo on GitHub" aria-label="GeCo on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
     </div>
   </div>
-  <p>Geometric Coding is an approach to computer-assisted qualitative analysis in which researchers deliberately construct and navigate multiple representations of a corpus. It uses computation to extend qualitative practices such as reading, comparison, coding, memoing, and measure development while keeping those practices connected to source context.</p>
+  <p>Geometric Coding extends qualitative coding by giving researchers more powerful ways to navigate, retrieve, compare, and interpret observations in large corpora across multiple representations. It also provides a framework for developing codes and measures qualitatively and extending them computationally across larger corpora using supervised models, without treating computation as a replacement for qualitative judgment.</p>
   <div class="project-entry__meta">
     <span><i class="fas fa-file-lines" aria-hidden="true"></i> <em>Geometric Coding: A Framework for Computer-Assisted Qualitative Analysis</em> — working paper</span>
     <span><i class="fas fa-code" aria-hidden="true"></i> Software: <a href="/geco/">GeCo</a></span>
@@ -48,9 +48,10 @@ My research spans two mutually informing areas: **methods for complex evidence**
       <a class="project-icon-link" href="https://github.com/zacthinks/lipe" title="LIPE on GitHub" aria-label="LIPE on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
     </div>
   </div>
-  <p>LIPE recovers recurring enacted interview questions from large interview corpora, treating the structure of the interviews as a research object in its own right and using that structure to support scalable retrieval, comparison, and exploration.</p>
+  <p>LIPE recovers recurring enacted interview questions from large collections of interview transcripts, treating the structure of the interviews themselves as a reportable research object rather than merely background to the analysis. The recovered structure can then support scalable retrieval, comparison, and exploration of responses across a corpus.</p>
   <div class="project-entry__meta">
     <span><i class="fas fa-file-lines" aria-hidden="true"></i> Manuscript under review at <em>Sociological Methods &amp; Research</em></span>
+    <span><i class="fas fa-link" aria-hidden="true"></i> <a href="https://doi.org/10.31235/osf.io/y5af2_v1">Preprint</a></span>
     <span><i class="fas fa-code" aria-hidden="true"></i> Open-source software: <a href="https://github.com/zacthinks/lipe">LIPE</a></span>
   </div>
 </article>
@@ -62,7 +63,7 @@ My research spans two mutually informing areas: **methods for complex evidence**
       <a class="project-icon-link" href="https://github.com/zacthinks/HiPr" title="HiPr, an earlier version of this work" aria-label="HiPr, an earlier version of this work"><i class="fab fa-github" aria-hidden="true"></i></a>
     </div>
   </div>
-  <p>Bag of Ideas develops richer, inspectable representations of text using explicit linguistic structure at multiple granularities and levels of abstraction. The goal is to retain more of the relationships that matter for interpretation while remaining compatible with scalable statistical and machine-learning workflows.</p>
+  <p>Bag of Ideas develops richer but still inspectable representations of text using explicit linguistic structure at multiple granularities and levels of abstraction. It occupies a middle ground between sparse representations such as bag-of-words, which are transparent and readily auditable but semantically limited, and embeddings, which capture much richer information but make it difficult to determine exactly what has been represented. By drawing on formal linguistic objects such as propositions, semantic roles, syntax, and entailment, the project aims to support representations that are both semantically richer and more transparent, auditable, and directly validatable.</p>
   <div class="project-entry__meta">
     <span><i class="fas fa-file-lines" aria-hidden="true"></i> <em>Bag of Ideas: Interpretable Semantic Representations for Text Analysis</em> — working paper</span>
     <span><i class="fas fa-person-chalkboard" aria-hidden="true"></i> Text as Data 2026</span>
@@ -74,7 +75,7 @@ My research spans two mutually informing areas: **methods for complex evidence**
   <div class="project-entry__top">
     <div class="project-entry__title">Measurement, Validation, and Inference</div>
   </div>
-  <p>Current work examines how constructs and measures should be developed, challenged, validated, and scaled before they are used for downstream inference, especially when measurement relies on human judgment, computational systems, or both.</p>
+  <p>I study how constructs and measures can be developed empirically before they are treated as fixed inputs to larger-scale analysis. This work treats development itself as a substantive research task and asks how finite information should be allocated and reused across development, validation, and downstream inference when the same observations cannot always legitimately serve every purpose.</p>
   <div class="project-entry__meta">
     <span class="project-entry__status"><i class="fas fa-flask" aria-hidden="true"></i> Active research</span>
   </div>
