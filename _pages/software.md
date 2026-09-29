@@ -5,6 +5,8 @@ permalink: /software/
 author_profile: true
 ---
 
+*This page is being updated.*
+
 ## TeAL
 
 <!-- Description, status, screenshots, GitHub, and documentation links to be added. -->
