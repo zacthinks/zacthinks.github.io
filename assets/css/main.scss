@@ -616,3 +616,150 @@
     min-width: 0;
   }
 }
+
+
+/* GeCo landing page */
+.geco-workflow-grid,
+.geco-workspace-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.geco-workflow-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.geco-workflow-card {
+  display: flex;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 1px solid var(--global-dark-border-color);
+  border-radius: 10px;
+  background: var(--global-bg-color);
+}
+
+.geco-workflow-card__number {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--global-link-color);
+  color: #fff;
+  font-family: $sans-serif;
+  font-weight: 800;
+}
+
+.geco-workflow-card h3,
+.geco-workspace-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1em;
+}
+
+.geco-workflow-card p,
+.geco-workspace-card p {
+  margin: 0;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.geco-workflow-note {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  margin-top: 0.85rem;
+  padding: 0.8rem 0.9rem;
+  border-left: 3px solid var(--global-link-color);
+  background: var(--details-summary-bg);
+}
+
+.geco-workflow-note i {
+  margin-top: 0.2rem;
+  color: var(--global-link-color);
+}
+
+.geco-workspace-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.geco-workspace-card {
+  padding: 1rem;
+  border: 1px solid var(--global-dark-border-color);
+  border-radius: 10px;
+  background: var(--global-bg-color);
+}
+
+.geco-workspace-card > i {
+  margin-bottom: 0.6rem;
+  font-size: 1.25em;
+  color: var(--global-link-color);
+}
+
+.geco-bridge {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 1.3rem;
+  border: 1px solid var(--global-dark-border-color);
+  border-left: 4px solid var(--global-link-color);
+  border-radius: 12px;
+}
+
+.geco-bridge__flow {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.geco-bridge__flow span {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--global-dark-border-color);
+  border-radius: 8px;
+  background: var(--details-summary-bg);
+  text-align: center;
+  font-family: $sans-serif;
+  font-weight: 650;
+  font-size: 0.88em;
+}
+
+.geco-bridge__flow i {
+  justify-self: center;
+  color: var(--global-link-color);
+}
+
+.geco-scope {
+  padding: 1.25rem;
+  border: 1px solid var(--global-dark-border-color);
+  border-radius: 12px;
+  background: var(--details-summary-bg);
+}
+
+.geco-resource-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+@media (max-width: 1000px) {
+  .geco-workspace-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .geco-resource-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .geco-workflow-grid,
+  .geco-bridge {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .geco-workspace-grid,
+  .geco-resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
