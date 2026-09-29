@@ -9,16 +9,14 @@ author_profile: true
 
 ## TeAL
 
-<!-- Description, status, screenshots, GitHub, and documentation links to be added. -->
+[GitHub](https://github.com/zacthinks/text-analysis-lab) · [Project page](/teal/)
 
 ## GeCo
 
-<!-- Description, status, screenshots, GitHub, and user-guide links to be added. -->
+[GitHub](https://github.com/zacthinks/GeCo) · [Project page](/geco/)
 
 ## LIPE
 
-<!-- Description, status, GitHub, and related paper/preprint links to be added. -->
+[GitHub](https://github.com/zacthinks/lipe)
 
-## Bag of Ideas
-
-<!-- Add when the public software artifact is ready to feature. -->
+<!-- Add Bag of Ideas here when there is a public repository to link. -->
