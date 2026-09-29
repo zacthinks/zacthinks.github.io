@@ -2,75 +2,25 @@
 permalink: /
 title: "Hello!"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-I'm an interdisciplinary methodologist specializing in using computers to facilitate large-scale text analyses.
+I develop methods, frameworks, and software for working with complex evidence, especially large and unstructured collections of texts in the social sciences. My work draws on qualitative and quantitative methodologies, measurement, computational methods, linguistics, and the history and philosophy of science. A recurring concern in my research is how computation can extend what researchers are able to do without obscuring the interpretive and methodological decisions on which good research depends. I am particularly interested in problems of representation, measurement, validation, and inference: how evidence is transformed into something researchers can analyze, what gets preserved or lost in the process, and what conclusions the resulting analyses can actually support.
 
-Text data is a rich yet often underutilized source of information in the social sciences. I develop computational tools and frameworks that enable researchers to work with large collections of text data, drawing on ideas from the social sciences, linguistics, and computer science. My work starts from the premise that different fields have different concerns and epistemic commitments, so translating advances in computer science into tools for social‑science research requires both familiarity with the full landscape of computer-assisted text analysis tools and a deep understanding of the role of texts in social science research translational work. I design methods and workflows that bring these advances into social‑science practice without sacrificing rigor, validity, transparency, replicability, or interpretive nuance—ultimately helping bridge long‑standing methodological boundaries and expanding the evidence base for understanding complex social phenomena.
+My current work spans two mutually informing areas: **methods for complex evidence** and **social, historical, and philosophical studies of scientific practice**.
 
-Additionally, I study histories of methodological tools and debates, both to enrich and inform our current methodological resources and to shed light on the nature of research itself.
+<small>If you're wondering how I ended up with this somewhat chimeric combination of interests, I have a longer account of the motivations and outlook behind my work [here](/motivations/).</small>
 
-Currently, my research projects form three clusters: computer-assisted text analysis methods, methodological debates in education research, and the philosophy of research. 
+## Methods for Complex Evidence
 
-<small>If you're wondering how one arrives at such a seemingly chimeric set of research interests, you can find a more detailed account of the motivations and outlook that shape my work [here](/motivations).</small>
+I develop methods and software for representing, interpreting, measuring, validating, and analyzing complex evidence at scale. Much of this work focuses on texts, where computational methods can make otherwise unmanageable bodies of evidence tractable, but can also introduce new problems of validity, interpretation, transparency, and reproducibility.
 
-<details>
-  <summary>Computer-Assisted Text Analysis (CATA)</summary>
-  <p>Computer-assisted text analysis refers to using computational tools to support researchers in working with large bodies of text. It requires understanding both the affordances and limitations of computational methods and the analytic practices they aim to assist, so we can see what aspects of text analysis can be scaled or augmented computationally and where new forms of analysis may become possible.</p>
+Projects in this area include [**TeAL**](/teal/), an accessible and extensible framework and software environment designed to enable transparent, intentional, rigorous, and reproducible multi-stage computer-assisted text analysis, and designed so that new tools and models are integratable into a common infrastructure as they emerge; [**GeCo**](/geco/), an interactive environment for exploring data across multiple representations. It formalizes and scales qualitative analysis, supporting interpretation alongside the development of codes and measures that can be extended across a corpus using supervised models. Also included are [**LIPE**](/lipe/), a method for recovering recurring interview structure from large collections of transcripts, and [**Bag of Ideas**](/bag-of-ideas/), which develops richer and more inspectable representations of texts.
 
-  <ul>
-    <li>
-      <strong>A History and Framework for Computer-Assisted Text Analysis</strong><br>
-      This project traces how text analysis methods have evolved—from early pre-computational counting systems to the first wave of computer-based tools—and examines the problems each generation of methods was designed to solve. It uses this historical trajectory to clarify how computational availability reshaped methodological priorities and what this means for designing tools that genuinely support human text analysis today.
-    </li>
-    <li>
-      <strong>ITM: Interactive Topic Model</strong><br>
-      <a href="https://github.com/zacthinks/InteractiveTopicModel/">ITM</a> is a framework and software package for uncovering topics in text. It is built to frontend the researchers' interpretive capacity, be robust to algorithmic bias, and as a springboard for downstream analyses.
-    </li>
-    <li>
-      <strong>LIPE: Latent Interview Protocol Engineer</strong><br>
-      <a href="https://github.com/zacthinks/lipe/">LIPE</a> is a framework and software package for organizing and exploring large collections of interview transcripts, helping researchers recover the implicit structure of interviews as a research finding in itself. It shows how computational techniques can assist in navigating large text datasets without replacing qualitative judgment.
-    </li>
-    <li>
-      <strong>I-CATA: Inferential Computer-Assisted Text Analyses</strong><br>
-      (WIP) I-CATA is a framework and software for end-to-end inferential analyses with text. It combines elements of research design for rigorous inference, qualitative data analysis, and machine learning to allow researchers to use texts for inference at scale without sacrificing interpretive nuance.
-    </li>
-    <li>
-      <strong>Representing Texts as Hierarchical Propositions (HiPr)</strong><br>
-      <a href="https://github.com/zacthinks/HiPr">HiPr</a> is a software package that proposes a transparent, semantics-driven alternative to traditional word-count representations by modeling texts as collections of propositions that preserve relational information lost in bag-of-words approaches. Each proposition carries internal structure and supports entailment relations, allowing researchers to find patterns in richer semantic details.
-    </li>
-  </ul>
-</details>
+## Social, Historical, and Philosophical Studies of Scientific Practice
 
-<details>
-  <summary>Methodological Debates in Education Research</summary>
-  <p>Long-standing methodological disputes in education have resisted resolution and complicated the field’s ability to offer trusted guidance, making it important to understand how these debates take shape and persist.</p>
-  <ul>
-    <li>
-      <strong>A Genealogy of Philosophical Framing in Methodological Debates</strong><br>
-      This project traces when and how philosophical framing entered methodological disputes in education research and what purposes it has served over time. It documents its intellectual origins, rhetorical patterns, and applications in major conflicts such as the federal attempts to regulate research in the 2000s.
-    </li>
-    <li>
-      <strong>A Full-Text Corpus of Education Research</strong><br>
-      I constructed a corpus of roughly one million full-text journal articles (1900–2014) to enable large-scale empirical analyses of trends in education research. This dataset supports the study of methodological discourse across journals, time periods, and subfields, many other questions about trends in the field.
-    </li>
-  </ul>
-</details>
+I also study research methods and scientific practice themselves as objects of inquiry. Using historical, sociological, philosophical, and computational approaches, I examine how methodological standards emerge, how methodological communities and divisions take shape, how ideas and practices travel through disciplines, and how these processes influence what kinds of research become possible or legitimate.
 
-<details>
-  <summary>Philosophy of Research</summary>
-  <p>As epistemic institutions face increasing scrutiny, it is important to clarify what research is, what it aims at, and how it can justify its claims to epistemic authority. This line of work examines the conceptual foundations of research as a practice and explores what researchers can reasonably strive for in a world where truth is not a straightforward or unproblematic goal.</p>
-    <ul>
-    <li>
-      <strong>Stuckiness as a Theory of the Between</strong><br>
-      This project argues that our epistemic activities, including research, must navigate a space between the absolute and the arbitrary, and proposes a theory for characterizing that shared target. It offers a way of conceptualizing what epistemic agents can collectively aim for that is grounded socio-psychologically as opposed to metaphysically.
-    </li>
-    <li>
-      <strong>Bullshit and Hope</strong><br>
-      I argue that the concept of bullshit is best understood as a general evaluative response to violated expectations, challenging dominant accounts that view it as a linguistic phenomenon. I then show how this reconceptualization provides tools for organizing society, including institutions like research.
-    </li>
-  </ul>
-</details>
+One major line of this work examines the history of qualitative-quantitative divisions in education research and the development of methodological identities, philosophical framings, and citation practices around them. Another traces the development of computer-assisted text analysis to understand why contemporary methods and infrastructures have taken the forms they have.
