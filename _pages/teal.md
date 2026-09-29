@@ -206,7 +206,7 @@ docs = p.get_artifact("documents")</code></pre>
     </div>
   </div>
 
-<pre class="teal-code teal-code--compact"><code>p.launch_project_center()
+<pre class="teal-code"><code>p.launch_project_center()
 
 # Or jump directly to a view
 p.launch_artifact_map()
