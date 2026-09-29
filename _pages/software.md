@@ -19,4 +19,6 @@ author_profile: true
 
 [GitHub](https://github.com/zacthinks/lipe)
 
-<!-- Add Bag of Ideas here when there is a public repository to link. -->
+## Bag of Ideas
+
+GitHub coming soon. For an earlier version of this work, see [HiPr](https://github.com/zacthinks/HiPr).
