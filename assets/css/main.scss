@@ -763,3 +763,17 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Tighten boxed GeCo section headings */
+.geco-bridge .teal-section__kicker,
+.teal-geco .teal-section__kicker,
+.geco-scope .teal-section__kicker {
+  margin-bottom: 0.2rem;
+}
+
+.geco-bridge h2,
+.teal-geco h2,
+.geco-scope h2 {
+  margin-top: 0;
+}
