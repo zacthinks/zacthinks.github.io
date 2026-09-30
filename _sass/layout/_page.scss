@@ -61,6 +61,10 @@
     font-size: clamp(1.9rem, 3.6vw, 2.65rem);
     line-height: 1.06;
     letter-spacing: -0.028em;
+
+    &:first-of-type {
+      margin-top: 2.6rem;
+    }
   }
 
   p, li, dl {
