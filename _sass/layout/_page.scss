@@ -38,8 +38,9 @@
   margin-top: 0;
   margin-bottom: 1.35rem;
   font-size: clamp(2.3rem, 4.5vw, 3.15rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
 
   & + .page__meta {
     margin-top: -0.5em;
@@ -59,8 +60,9 @@
     padding-bottom: 0;
     border-bottom: 0;
     font-size: clamp(1.9rem, 3.6vw, 2.65rem);
-    line-height: 1.06;
-    letter-spacing: -0.028em;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.018em;
 
     &:first-of-type {
       margin-top: 2.6rem;
