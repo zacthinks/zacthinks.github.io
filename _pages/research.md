@@ -5,7 +5,7 @@ permalink: /research/
 author_profile: true
 ---
 
-My research spans two mutually informing areas: **methods for complex evidence** and **social, historical, and philosophical studies of scientific practice**. The entries below organize the work by research agenda or project; papers, software, and data resources sit underneath the projects they belong to.
+<p class="page-intro">My research spans two mutually informing areas: <strong>methods for complex evidence</strong> and <strong>social, historical, and philosophical studies of scientific practice</strong>. The entries below organize the work by research agenda or project; papers, software, and data resources sit underneath the projects they belong to.</p>
 
 ## Methods for Complex Evidence
 
