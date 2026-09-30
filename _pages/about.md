@@ -19,23 +19,46 @@ redirect_from:
   </div>
 </div>
 
+<section class="home-how" aria-labelledby="home-how-heading">
+  <div class="home-section-kicker">How I work</div>
+  <h2 id="home-how-heading">Curiously, across boundaries.</h2>
+  <p>I draw ideas freely across disciplinary boundaries. Sometimes I go looking for an idea; sometimes I stumble into one. I care more about what a problem requires than where an idea is supposed to belong.</p>
+  <div class="home-disciplines" aria-label="Fields informing my work">
+    <span>Qualitative methodology</span>
+    <span>Measurement</span>
+    <span>Statistics</span>
+    <span>Linguistics</span>
+    <span>Computational methods &amp; AI</span>
+    <span>History &amp; philosophy of science</span>
+  </div>
+</section>
+
 <div class="home-section-kicker">Two mutually informing areas</div>
 
 <div class="home-area-grid">
   <article class="home-area">
     <h2>Methods for Complex Evidence</h2>
-    <div class="home-area__tags">Computational methods · Qualitative inquiry · Measurement</div>
     <p>Methods and software for making complex evidence tractable without losing transparency, interpretation, or methodological control.</p>
     <a class="home-area__link" href="/research/#methods-for-complex-evidence">Explore research →</a>
   </article>
 
   <article class="home-area">
     <h2>Scientific Practice</h2>
-    <div class="home-area__tags">History · Sociology · Philosophy · Methodology</div>
     <p>Studies of how research methods, standards, communities, and methodological divisions develop and acquire authority.</p>
     <a class="home-area__link" href="/research/#social-historical-and-philosophical-studies-of-scientific-practice">Explore research →</a>
   </article>
 </div>
+
+<section class="home-questions" aria-labelledby="home-questions-heading">
+  <div class="home-section-kicker">Questions I keep returning to</div>
+  <h2 class="home-questions__heading" id="home-questions-heading">Recurring questions</h2>
+  <div class="home-question-grid">
+    <p>What becomes possible when methodological boundaries are not taken for granted?</p>
+    <p>How can we work systematically with rich evidence without stripping away what makes it informative?</p>
+    <p>How can interpretive, computational, and statistical reasoning inform one another within the same inquiry?</p>
+    <p>What does it take for methods to travel rigorously across different settings?</p>
+  </div>
+</section>
 
 <section class="home-selected" aria-labelledby="home-selected-heading">
   <div class="home-selected__head">
