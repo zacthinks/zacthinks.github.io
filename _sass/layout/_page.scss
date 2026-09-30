@@ -50,9 +50,14 @@
 
 .page__content {
 
-  h2 {
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid var(--global-border-color);
+  > h2 {
+    margin-top: 3.2rem;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0;
+    border-bottom: 0;
+    font-size: clamp(1.65rem, 3vw, 2.1rem);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
   }
 
   p, li, dl {
