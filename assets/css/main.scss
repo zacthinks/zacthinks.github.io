@@ -42,6 +42,19 @@
     "vendor/font-awesome/brands"
 ;
 
+
+/* Destination page introductions */
+.page-intro {
+  max-width: 52rem;
+  margin: 0;
+  font-size: 1.08em;
+  line-height: 1.65;
+}
+
+.page-intro + .project-index {
+  margin-top: 2.25rem;
+}
+
 /* Project and software indexes */
 .project-index {
   margin: 1.25rem 0 2rem;
