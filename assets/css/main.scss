@@ -174,11 +174,12 @@
 }
 
 .teal-hero h2 {
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.75rem;
   padding: 0;
   border: 0;
-  font-size: 2em;
-  line-height: 1.08;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.04;
+  letter-spacing: -0.028em;
 }
 
 .teal-hero__lead {
@@ -244,15 +245,21 @@
 }
 
 .teal-section {
-  margin: 2.4rem 0;
+  margin: 4.5rem 0;
 }
 
 .teal-section__heading {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.1rem;
 }
 
-.teal-section__heading h2 {
+.teal-section h2 {
   margin-top: 0;
+  margin-bottom: 0.85rem;
+  padding: 0;
+  border: 0;
+  font-size: clamp(1.9rem, 3.6vw, 2.65rem);
+  line-height: 1.06;
+  letter-spacing: -0.028em;
 }
 
 .teal-principles,
@@ -459,8 +466,12 @@
     padding: 1.25rem;
   }
 
+  .teal-section {
+    margin: 3.5rem 0;
+  }
+
   .teal-hero h2 {
-    font-size: 1.6em;
+    font-size: 2rem;
   }
 
   .teal-principles,
@@ -1073,5 +1084,23 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 0.55rem;
+  }
+}
+
+
+/* Site-wide editorial hierarchy */
+.tai-chi-board > h2:not(.tai-chi-section-title) {
+  margin-top: 3.75rem;
+  margin-bottom: 1rem;
+  padding: 0;
+  border: 0;
+  font-size: clamp(1.9rem, 3.6vw, 2.65rem);
+  line-height: 1.06;
+  letter-spacing: -0.028em;
+}
+
+@media (max-width: 600px) {
+  .tai-chi-board > h2:not(.tai-chi-section-title) {
+    margin-top: 3.25rem;
   }
 }
