@@ -194,7 +194,15 @@ author_profile: true
 
 <div class="tai-chi-board" id="tai-chi-board">
   <p class="tai-chi-intro">
-    Informal evening Tai Chi sessions open to all! Plans can change, so this page is the best place to check the current status. Sessions are an hour unless otherwise specified.
+    I organize informal evening Tai Chi sessions open to anyone interested in practicing together. Complete beginners are welcome, and no prior experience is expected. Sessions are usually about an hour and are intended to be relaxed, low-pressure opportunities to move and practice together.
+  </p>
+
+  <h2>What to expect</h2>
+  <p>
+    Depending on who shows up, I’m happy either to lead a follow-along practice or to teach more explicitly. A typical session includes warm-ups and stretching, movement drills, and work on forms; what we practice can vary from session to session.
+  </p>
+  <p>
+    No special equipment is required. Wear clothes that let you move comfortably and, if possible, soft, flat shoes. Tai Chi involves fairly precise control of how the foot meets the ground, so stiff or bulky footwear can make some movements unnecessarily difficult.
   </p>
 
   <section
@@ -222,5 +230,11 @@ author_profile: true
     If a date has not been posted, it is not a commitment that a session will happen. Please check again later for updates.
   </p>
 </div>
+
+## My Tai Chi Practice
+
+I am primarily trained in Yang-style Tai Chi and am a seventh-generation practitioner. I began practicing as a graduate student, trained with my teacher Yu Luyun in Taiwan, taught for several years at the Cambridge YMCA, and have competed in the United States and Taiwan. [Read more about my Tai Chi background →](/tai-chi/about/)
+
+For people looking for a more structured weekly class, Tai Chi classes continue at the Cambridge YMCA, where I taught for several years before graduating. Some of the students my mother and I taught have since helped carry the classes forward.
 
 <script src="{{ '/assets/js/tai-chi.js' | relative_url }}" defer></script>
