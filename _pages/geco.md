@@ -9,7 +9,7 @@ author_profile: false
 
 <section class="teal-hero geco-hero">
   <div class="teal-hero__eyebrow">GEOMETRIC CODER</div>
-  <h2>Qualitative analysis across multiple representations, from exploration to computational extension.</h2>
+  <h2>Computational support for qualitative inquiry, on qualitative terms.</h2>
   <p class="teal-hero__lead">GeCo is an interactive environment for exploring data across multiple researcher-chosen representations. It formalizes and scales qualitative analysis, supporting contextual interpretation, comparison, coding, and memoing alongside the development of codes that can be extended across a corpus using supervised models.</p>
 
   <div class="teal-actions">
@@ -35,7 +35,7 @@ author_profile: false
 
   <p>Qualitative analysis depends on close reading, context, comparison, interpretation, revisiting, memoing, and the gradual development and refinement of concepts. GeCo keeps those practices at the center while adding computational ways to organize attention: researchers can view the same observations through different representations, move deliberately among neighborhoods and outliers, search and filter the corpus, compare cases in context, and preserve the analytic encounters through which codes develop.</p>
 
-  <p>The representations are not interpretations. Similarity, distance, neighborhoods, isolation, and model disagreement provide candidate relations that a researcher can inspect; they do not decide what a case means or whether a code is valid. GeCo uses those relations to make purposeful comparison easier, then lets researchers use their own judgments to guide what the system shows them next.</p>
+  <p>Similarity, distance, neighborhoods, isolation, and model disagreement provide relations that a researcher can inspect; they do not decide what a case means or whether a code is valid. GeCo enables researchers to use those relations to make purposeful comparisons, while their own judgments continue to guide what the system shows them next.</p>
 
   <div class="teal-principles">
     <div class="teal-principle">
@@ -109,10 +109,10 @@ author_profile: false
 <section class="teal-section" id="interface">
   <div class="teal-section__heading">
     <span class="teal-section__kicker">THE INTERFACE</span>
-    <h2>The software is the workspace.</h2>
+    <h2>A visual interface for qualitative analysis.</h2>
   </div>
 
-  <p>GeCo is designed around a visual browser interface rather than around a Python API. The current pre-alpha release still uses Python to create and configure a project, but the analytic work itself is organized into five connected workspaces. The longer-term aim is to make project setup visual as well, so researchers should not need to become programmers simply to use computational assistance in qualitative analysis.</p>
+  <p>GeCo is designed around a visual browser interface rather than around a Python API. The current pre-alpha release still uses Python to create and configure a project, but the analytic work itself is organized into five connected graphical workspaces. The longer-term goal is an end-to-end interface in which researchers can also load a corpus, define its structure, preprocess it, construct representations, and launch an analysis without writing code. Researchers should not need to become programmers simply to use computational assistance in qualitative inquiry.</p>
 
   <div class="geco-workspace-grid">
     <div class="geco-workspace-card">
@@ -169,7 +169,7 @@ author_profile: false
     <h2>Create the workspace, then work in the interface.</h2>
   </div>
 
-  <p>Today, a GeCo project is configured in Python by supplying a corpus, its stable keys, the text field, and one or more geometries. Once the project exists, <code>launch()</code> opens the local visual workspace in the browser.</p>
+  <p>Today, a GeCo project is configured in Python by supplying a corpus, its stable keys, the text field, and one or more geometries. Once the project exists, <code>launch()</code> opens the local visual workspace in the browser. The planned end-to-end interface will move corpus loading, preprocessing, representation setup, and project creation into the GUI as well.</p>
 
 <pre class="teal-code"><code>import pandas as pd
 
