@@ -6,8 +6,8 @@ author_profile: true
 
 <style>
   .tai-chi-board {
-    --tc-border: rgba(0, 0, 0, 0.12);
-    --tc-muted: #666;
+    --tc-border: var(--global-border-color);
+    --tc-muted: var(--global-text-color-light);
     --tc-surface: #f7f7f8;
     --tc-on-bg: #eaf7ef;
     --tc-on-fg: #176b3a;
@@ -26,7 +26,6 @@ author_profile: true
 
   .tai-chi-intro {
     margin: 0 0 1.25rem;
-    color: var(--tc-muted);
     line-height: 1.55;
   }
 
