@@ -1,26 +1,73 @@
 ---
 permalink: /
-title: "Hello!"
 author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
-I develop methods, frameworks, and software for working with complex evidence, especially large and unstructured collections of texts in the social sciences. My work draws on qualitative and quantitative methodologies, measurement, computational methods, linguistics, and the history and philosophy of science. A recurring concern in my research is how computation can extend what researchers are able to do without obscuring the interpretive and methodological decisions on which good research depends. I am particularly interested in problems of representation, measurement, validation, and inference: how evidence is transformed into something researchers can analyze, what gets preserved or lost in the process, and what conclusions the resulting analyses can actually support.
+<div class="home-hero">
+  <div class="home-eyebrow">Research · Methods · Software</div>
+  <h1 class="home-title">Methods for working with complex evidence</h1>
+  <p class="home-lede">I develop methods, frameworks, and software for working with large and complex bodies of evidence, especially text, while keeping interpretive and methodological decisions visible and defensible.</p>
+  <div class="home-topics" aria-label="Research themes">
+    <span>Representation</span>
+    <span>Measurement</span>
+    <span>Validation</span>
+    <span>Inference</span>
+    <span>Scalable analysis</span>
+  </div>
+</div>
 
-My current work spans two mutually informing areas: **methods for complex evidence** and **social, historical, and philosophical studies of scientific practice**.
+<div class="home-section-kicker">Two mutually informing areas</div>
 
-<small style="display:block; line-height:1.2; margin:0.35rem 0 0.9rem;">If you're wondering how I ended up with this somewhat chimeric combination of interests, I have a longer account of the motivations and outlook behind my work <a href="/motivations/">here</a>.</small>
+<div class="home-area-grid">
+  <article class="home-area">
+    <h2>Methods for Complex Evidence</h2>
+    <div class="home-area__tags">Computational methods · Qualitative inquiry · Measurement</div>
+    <p>Methods and software for making complex evidence tractable without losing transparency, interpretation, or methodological control.</p>
+    <a class="home-area__link" href="/research/#methods-for-complex-evidence">Explore research →</a>
+  </article>
 
-## Methods for Complex Evidence
+  <article class="home-area">
+    <h2>Scientific Practice</h2>
+    <div class="home-area__tags">History · Sociology · Philosophy · Methodology</div>
+    <p>Studies of how research methods, standards, communities, and methodological divisions develop and acquire authority.</p>
+    <a class="home-area__link" href="/research/#social-historical-and-philosophical-studies-of-scientific-practice">Explore research →</a>
+  </article>
+</div>
 
-I develop methods and software for representing, interpreting, measuring, validating, and analyzing complex evidence at scale. Much of this work focuses on texts, where computational methods can make otherwise unmanageable bodies of evidence tractable, but can also introduce new problems of validity, interpretation, transparency, and reproducibility.
+<section class="home-selected" aria-labelledby="home-selected-heading">
+  <div class="home-selected__head">
+    <h2 id="home-selected-heading">Selected projects</h2>
+    <a href="/research/">View all research →</a>
+  </div>
 
-Projects in this area include [**TeAL**](/teal/), an accessible and extensible framework and software environment designed to enable transparent, intentional, rigorous, and reproducible multi-stage computer-assisted text analysis, with new tools and models integratable into a common infrastructure as they emerge; [**GeCo**](/geco/), an interactive environment for exploring data across multiple representations. It formalizes and scales qualitative analysis, supporting interpretation alongside the development of codes and measures that can be extended across a corpus using supervised models. Also included are [**LIPE**](/research/#lipe), a method for recovering recurring interview structure from large collections of transcripts, and [**Bag of Ideas**](/research/#bag-of-ideas), which develops richer and more inspectable representations of texts.
+  <div class="home-project-grid">
+    <article class="home-project">
+      <h3>TeAL</h3>
+      <p>Transparent infrastructure for multi-stage computer-assisted text analysis.</p>
+      <a href="/teal/">Software →</a>
+    </article>
 
-## Social, Historical, and Philosophical Studies of Scientific Practice
+    <article class="home-project">
+      <h3>GeCo</h3>
+      <p>Interactive qualitative analysis across multiple researcher-chosen representations.</p>
+      <a href="/geco/">Software →</a>
+    </article>
 
-I also study research methods and scientific practice themselves as objects of inquiry. Using historical, sociological, philosophical, and computational approaches, I examine how methodological standards emerge, how methodological communities and divisions take shape, how ideas and practices travel through disciplines, and how these processes influence what kinds of research become possible or legitimate.
+    <article class="home-project">
+      <h3>LIPE</h3>
+      <p>Recovering recurring interview structure from large collections of transcripts.</p>
+      <a href="/research/#lipe">Research →</a>
+    </article>
 
-One major line of this work examines the history of qualitative-quantitative divisions in education research and the development of methodological identities, philosophical framings, and citation practices around them. Another traces the development of computer-assisted text analysis to understand why contemporary methods and infrastructures have taken the forms they have.
+    <article class="home-project">
+      <h3>Bag of Ideas</h3>
+      <p>Semantically richer, inspectable representations of text.</p>
+      <a href="/research/#bag-of-ideas">Research →</a>
+    </article>
+  </div>
+</section>
+
+<p class="home-closing">Curious how these interests fit together? <a href="/motivations/">Read about the motivations behind my work →</a></p>
