@@ -26,7 +26,11 @@ layout: default
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
-          {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+          {% assign hide_destination_title = false %}
+          {% if page.url == "/research/" or page.url == "/software/" or page.url == "/teaching/" or page.url == "/cv/" or page.url == "/tai-chi/" or page.url == "/teal/" or page.url == "/geco/" %}
+            {% assign hide_destination_title = true %}
+          {% endif %}
+          {% unless hide_destination_title %}{% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}{% endunless %}
           {% if page.read_time %}
             <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
           {% endif %}
