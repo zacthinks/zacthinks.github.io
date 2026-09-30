@@ -5,7 +5,7 @@ permalink: /software/
 author_profile: true
 ---
 
-I build software as part of the methodological work itself: the tools below are usable implementations of broader research frameworks and projects. The GitHub icon links directly to the code; the page icon opens a fuller project page where one exists.
+<p class="page-intro">I build software as part of the methodological work itself: the tools below are usable implementations of broader research frameworks and projects. The GitHub icon links directly to the code; the page icon opens a fuller project page where one exists.</p>
 
 <div class="project-index">
 
