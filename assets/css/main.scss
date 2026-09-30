@@ -773,7 +773,11 @@
 }
 
 /* Compact homepage aside */
-.home-aside {
-  margin: 0.45rem 0 1rem;
-  line-height: 1.25;
+.page__content .home-aside {
+  margin: 0.35rem 0 0.9rem;
+}
+
+.page__content .home-aside small {
+  display: block;
+  line-height: 1.18;
 }
