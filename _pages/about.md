@@ -11,7 +11,7 @@ I develop methods, frameworks, and software for working with complex evidence, e
 
 My current work spans two mutually informing areas: **methods for complex evidence** and **social, historical, and philosophical studies of scientific practice**.
 
-<p class="home-aside"><small>If you're wondering how I ended up with this somewhat chimeric combination of interests, I have a longer account of the motivations and outlook behind my work [here](/motivations/).</small></p>
+<small style="display:block; line-height:1.2; margin:0.35rem 0 0.9rem;">If you're wondering how I ended up with this somewhat chimeric combination of interests, I have a longer account of the motivations and outlook behind my work <a href="/motivations/">here</a>.</small>
 
 ## Methods for Complex Evidence
 
