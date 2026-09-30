@@ -782,3 +782,45 @@
   font-size: 0.9em;
   opacity: 0.78;
 }
+
+
+/* Tai Chi background page */
+.tai-chi-lineage {
+  display: grid;
+  justify-items: center;
+  gap: 0.3rem;
+  max-width: 34rem;
+  margin: 1.25rem auto 2rem;
+}
+
+.tai-chi-lineage__person {
+  display: flex;
+  width: 100%;
+  max-width: 24rem;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--global-dark-border-color);
+  border-radius: 8px;
+  background: var(--global-bg-color);
+  font-family: $sans-serif;
+}
+
+.tai-chi-lineage__person span {
+  opacity: 0.72;
+}
+
+.tai-chi-lineage__person--current {
+  border-left: 4px solid var(--global-link-color);
+}
+
+.tai-chi-lineage__arrow {
+  color: var(--global-link-color);
+  font-size: 1.05em;
+  line-height: 1;
+}
+
+.tai-chi-about-note {
+  font-size: 0.9em;
+  opacity: 0.72;
+}
