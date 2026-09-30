@@ -824,3 +824,34 @@
   font-size: 0.9em;
   opacity: 0.72;
 }
+
+
+.tai-chi-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tai-chi-photo-grid figure {
+  margin: 0;
+}
+
+.tai-chi-photo-grid img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.tai-chi-photo-grid figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.84em;
+  line-height: 1.45;
+  opacity: 0.75;
+}
+
+@media (max-width: 700px) {
+  .tai-chi-photo-grid {
+    grid-template-columns: 1fr;
+  }
+}
