@@ -13,9 +13,9 @@ $doc-font-size              : 16;
 $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
-/* System typefaces */
+/* Site typefaces */
 $serif                      : Georgia, Times, serif;
-$sans-serif                 : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$sans-serif                 : "Martel Sans", sans-serif;
 $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 
 /* Sans serif typefaces */
@@ -41,7 +41,7 @@ $type-size-8                : 0.625em;  // ~10px
 
 $global-font-family         : $sans-serif;
 $header-font-family         : $sans-serif;
-$caption-font-family        : $serif;
+$caption-font-family        : $sans-serif;
 
 /* ==========================================================================
    Breakpoints
