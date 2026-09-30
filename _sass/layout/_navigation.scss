@@ -258,6 +258,17 @@
                 transform: scaleX(1); /* reveal*/
       }
     }
+
+    li.current > a {
+      color: var(--global-link-color);
+      font-weight: 700;
+
+      &:before {
+        -webkit-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+                transform: scaleX(1);
+      }
+    }
   }
 
   .hidden-links {
