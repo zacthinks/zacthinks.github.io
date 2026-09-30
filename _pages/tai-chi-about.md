@@ -31,8 +31,14 @@ I am primarily trained in Yang-style Tai Chi and am a seventh-generation practit
 
 I taught Tai Chi at the Cambridge YMCA for several years, often alongside my mother. We worked with students ranging from complete beginners to longer-term practitioners. Since I graduated, some of our former students have continued the classes, which remain a good option for people looking for a more structured weekly practice.
 
-## Competition
+<div class="tai-chi-photo-grid">
+  <figure>
+    <img src="/images/tai-chi/mom-competition-2024.jpg" alt="My mother at a Tai Chi competition">
+    <figcaption>My mom, with whom I taught Tai Chi at the Cambridge YMCA.</figcaption>
+  </figure>
 
-I have competed in the United States and Taiwan. At the **2025 9th World Cup Tai Chi Chuan Championship** in Taiwan, I received multiple gold and silver awards.
-
-<p class="tai-chi-about-note">I’ll add a small set of competition and teaching photos here once the image files are in the site repository.</p>
+  <figure>
+    <img src="/images/tai-chi/world-cup-2025.jpg" alt="Zac Lim at the 2025 9th World Cup Tai Chi Chuan Championship in Taiwan">
+    <figcaption>At the 2025 9th World Cup Tai Chi Chuan Championship in Taiwan, where I received multiple gold and silver medals.</figcaption>
+  </figure>
+</div>
