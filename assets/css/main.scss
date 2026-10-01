@@ -822,6 +822,12 @@
   opacity: 0.78;
 }
 
+.project-entry__meta .teaching-evaluation {
+  flex: 1 1 100%;
+  white-space: normal;
+  line-height: 1.45;
+}
+
 
 /* Tai Chi background page */
 .tai-chi-lineage {
@@ -895,6 +901,57 @@
   }
 }
 
+
+/* Mobile homepage greeting */
+.home-mobile-hello {
+  display: none;
+}
+
+@media (max-width: 924px) {
+  .home-mobile-hello {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    max-height: 2.25rem;
+    margin: 0 0 1rem;
+    padding: 0.4rem 0.65rem;
+    overflow: hidden;
+    border: 1px solid var(--global-link-color);
+    border-radius: 999px;
+    color: var(--global-text-color);
+    background: color-mix(in srgb, var(--global-link-color) 8%, var(--global-bg-color));
+    font-family: $sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1;
+    animation: home-mobile-hello-reveal 1.8s ease-in-out forwards;
+  }
+}
+
+@keyframes home-mobile-hello-reveal {
+  0%, 62% {
+    max-height: 2.25rem;
+    margin-bottom: 1rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    opacity: 1;
+  }
+  100% {
+    max-height: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-width: 0;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (max-width: 924px) {
+  .home-mobile-hello {
+    display: none;
+    animation: none;
+  }
+}
 
 /* Homepage */
 .home-hero {
@@ -1016,12 +1073,16 @@
 .home-question-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem 2.75rem;
+  gap: 1rem;
   margin-top: 1.6rem;
 }
 
 .home-question {
   min-width: 0;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--global-dark-border-color);
+  border-radius: 10px;
+  background: var(--global-bg-color);
 }
 
 .home-question__number {
@@ -1061,11 +1122,15 @@
 .home-project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem 2.75rem;
+  gap: 1rem;
 }
 
 .home-project {
   min-width: 0;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--global-dark-border-color);
+  border-radius: 10px;
+  background: var(--global-bg-color);
 }
 
 .home-project h3 {
