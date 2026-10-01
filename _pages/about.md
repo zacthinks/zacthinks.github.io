@@ -6,8 +6,6 @@ redirect_from:
   - /about.html
 ---
 
-<div class="home-mobile-hello" aria-hidden="true">👋 <span>Hello!</span></div>
-
 <div class="home-hero">
   <div class="home-eyebrow">Research · Methods · Software</div>
   <h1 class="home-title">Methods for working with complex evidence</h1>
