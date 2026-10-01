@@ -34,11 +34,11 @@ I taught Tai Chi at the Cambridge YMCA for several years, often alongside my mot
 <div class="tai-chi-photo-grid">
   <figure>
     <img src="/images/tai-chi/mom-competition-2024.jpg" alt="My mother at a Tai Chi competition">
-    <figcaption>My mom, with whom I taught Tai Chi at the Cambridge YMCA.</figcaption>
+    <figcaption>My mom, with whom I taught Tai Chi at the Cambridge YMCA, celebrating yet another gold medal at the 13th World Open Martial Arts Championship in Boston.</figcaption>
   </figure>
 
   <figure>
     <img src="/images/tai-chi/world-cup-2025.jpg" alt="Zac Lim at the 2025 9th World Cup Tai Chi Chuan Championship in Taiwan">
-    <figcaption>At the 2025 9th World Cup Tai Chi Chuan Championship in Taiwan, where I received multiple gold and silver medals.</figcaption>
+    <figcaption>At the 2025 9th World Cup Tai Chi Chuan Championship in Taipei, where I received multiple gold and silver medals.</figcaption>
   </figure>
 </div>
