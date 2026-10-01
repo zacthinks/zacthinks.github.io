@@ -30,7 +30,7 @@ author_profile: true
   }
 
   .tai-chi-card {
-    border: 1px solid var(--tc-border);
+    border: 2px solid var(--tc-border);
     border-radius: 16px;
     padding: 1.35rem;
     margin-bottom: 1.5rem;
@@ -40,16 +40,19 @@ author_profile: true
   .tai-chi-card[data-tone="on"] {
     background: var(--tc-on-bg);
     color: var(--tc-on-fg);
+    border-color: color-mix(in srgb, var(--tc-on-fg) 45%, var(--tc-border));
   }
 
   .tai-chi-card[data-tone="cancelled"] {
     background: var(--tc-cancelled-bg);
     color: var(--tc-cancelled-fg);
+    border-color: color-mix(in srgb, var(--tc-cancelled-fg) 45%, var(--tc-border));
   }
 
   .tai-chi-card[data-tone="tentative"] {
     background: var(--tc-tentative-bg);
     color: var(--tc-tentative-fg);
+    border-color: color-mix(in srgb, var(--tc-tentative-fg) 45%, var(--tc-border));
   }
 
   .tai-chi-card[data-tone="neutral"],
@@ -57,6 +60,7 @@ author_profile: true
   .tai-chi-card[data-tone="error"] {
     background: var(--tc-neutral-bg);
     color: var(--tc-neutral-fg);
+    border-color: var(--global-dark-border-color);
   }
 
   .tai-chi-kicker {
