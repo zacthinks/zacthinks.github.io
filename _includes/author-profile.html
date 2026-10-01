@@ -200,7 +200,19 @@
 
   <div class="author-profile-mobile__details">
     <h3 class="author-profile-mobile__name">{{ author.name }}</h3>
+    {% if author.pronouns %}<p class="author-profile-mobile__pronouns">{{ author.pronouns }}</p>{% endif %}
     {% if author.bio %}<p class="author-profile-mobile__bio">{{ author.bio }}</p>{% endif %}
+
+    {% if author.location or author.employer %}
+      <div class="author-profile-mobile__meta" aria-label="Location and affiliation">
+        {% if author.location %}
+          <span><i class="fas fa-location-dot" aria-hidden="true"></i> {{ author.location }}</span>
+        {% endif %}
+        {% if author.employer %}
+          <span><i class="fas fa-building-columns" aria-hidden="true"></i> {{ author.employer }}</span>
+        {% endif %}
+      </div>
+    {% endif %}
 
     <div class="author-profile-mobile__links" aria-label="Profile links">
       {% if author.email %}
