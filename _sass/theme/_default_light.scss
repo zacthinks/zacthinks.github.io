@@ -7,6 +7,7 @@ $gray                       : #7a8288;
 $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
+$muted-gray                 : mix(#000, $gray, 15%);
 $lighter-gray               : mix(#fff, $gray, 90%);
 
 $background                 : #eee;
@@ -47,7 +48,7 @@ $sidebar-screen-min-width   : 1024px;
     --global-masthead-link-color        : #{$dark-gray};
     --global-masthead-link-color-hover  : mix(#000, #{$gray}, 25%);    
     --global-text-color                 : #{$dark-gray};
-    --global-text-color-light           : #{$light-gray};
+    --global-text-color-light           : #{$muted-gray};
     --details-summary-bg                : #{darken($background, 8%)};
     --global-thead-color                : #{$lighter-gray};
 }
