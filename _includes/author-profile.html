@@ -4,7 +4,7 @@
   {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
 {% endif %}
 
-<div class="author-profile" itemscope itemtype="http://schema.org/Person">
+<div class="author-profile author-profile--desktop" itemscope itemtype="http://schema.org/Person">
 
   <div class="author__avatar">
     <div class="author__avatar-frame">
@@ -182,3 +182,40 @@
     </ul>
   </div>
 </div>
+
+
+{% if page.url == "/" %}
+<div class="author-profile-mobile" itemscope itemtype="http://schema.org/Person">
+  <div class="author-profile-mobile__portrait">
+    {% if author.avatar contains "://" %}
+      <img src="{{ author.avatar }}" alt="{{ author.name }}" fetchpriority="high" />
+    {% else %}
+      <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" alt="{{ author.name }}" fetchpriority="high" />
+    {% endif %}
+    <div class="author-profile-mobile__hello" aria-hidden="true">
+      <span class="author-profile-mobile__wave">👋</span>
+      <span class="author-profile-mobile__hello-text">Hello!</span>
+    </div>
+  </div>
+
+  <div class="author-profile-mobile__details">
+    <h3 class="author-profile-mobile__name">{{ author.name }}</h3>
+    {% if author.bio %}<p class="author-profile-mobile__bio">{{ author.bio }}</p>{% endif %}
+
+    <div class="author-profile-mobile__links" aria-label="Profile links">
+      {% if author.email %}
+        <a href="mailto:{{ author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
+      {% endif %}
+      {% if author.github %}
+        <a href="https://github.com/{{ author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+      {% endif %}
+      {% if author.googlescholar %}
+        <a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar" aria-hidden="true"></i> Scholar</a>
+      {% endif %}
+      {% if author.orcid %}
+        <a href="{{ author.orcid }}"><i class="ai ai-orcid" aria-hidden="true"></i> ORCID</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}
