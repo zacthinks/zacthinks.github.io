@@ -139,23 +139,47 @@
   }
 
   .sidebar .author-profile-mobile__name {
-    margin: 0 0 0.45rem;
+    margin: 0 0 0.28rem;
     font-size: 1.2rem;
     line-height: 1.2;
   }
 
+  .sidebar .author-profile-mobile__pronouns {
+    margin: 0 0 0.65rem;
+    color: var(--global-text-color-light);
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
   .sidebar .author-profile-mobile__bio {
-    margin: 0 auto 0.9rem;
+    margin: 0 auto 0.85rem;
     font-size: 0.88rem;
     line-height: 1.5;
   }
 
+  .author-profile-mobile__meta,
   .author-profile-mobile__links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.4rem 0.9rem;
     font-family: $sans-serif;
+  }
+
+  .author-profile-mobile__meta {
+    gap: 0.35rem 1rem;
+    margin-bottom: 0.6rem;
+    color: var(--global-text-color-light);
+    font-size: 0.78rem;
+  }
+
+  .author-profile-mobile__meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .author-profile-mobile__links {
+    gap: 0.4rem 0.9rem;
     font-size: 0.8rem;
   }
 
