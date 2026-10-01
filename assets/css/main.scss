@@ -902,57 +902,6 @@
 }
 
 
-/* Mobile homepage greeting */
-.home-mobile-hello {
-  display: none;
-}
-
-@media (max-width: 924px) {
-  .home-mobile-hello {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    max-height: 2.25rem;
-    margin: 0 0 1rem;
-    padding: 0.4rem 0.65rem;
-    overflow: hidden;
-    border: 1px solid var(--global-link-color);
-    border-radius: 999px;
-    color: var(--global-text-color);
-    background: color-mix(in srgb, var(--global-link-color) 8%, var(--global-bg-color));
-    font-family: $sans-serif;
-    font-size: 0.82rem;
-    font-weight: 700;
-    line-height: 1;
-    animation: home-mobile-hello-reveal 1.8s ease-in-out forwards;
-  }
-}
-
-@keyframes home-mobile-hello-reveal {
-  0%, 62% {
-    max-height: 2.25rem;
-    margin-bottom: 1rem;
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem;
-    opacity: 1;
-  }
-  100% {
-    max-height: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-width: 0;
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) and (max-width: 924px) {
-  .home-mobile-hello {
-    display: none;
-    animation: none;
-  }
-}
-
 /* Homepage */
 .home-hero {
   max-width: 50rem;
