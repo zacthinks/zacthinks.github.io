@@ -39,6 +39,6 @@ I taught Tai Chi at the Cambridge YMCA for several years, often alongside my mot
 
   <figure>
     <img src="/images/tai-chi/world-cup-2025.jpg" alt="Zac Lim at the 2025 9th World Cup Tai Chi Chuan Championship in Taiwan">
-    <figcaption>At the 2025 9th World Cup Tai Chi Chuan Championship in Taipei, where I received multiple gold and silver medals.</figcaption>
+    <figcaption>At the 2025 9th World Cup Tai Chi Chuan Championship in Taipei, where I received multiple gold and silver medals, with my dad (right) and Tai Chi master, Yu Luyun (left).</figcaption>
   </figure>
 </div>
